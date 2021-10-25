@@ -10,7 +10,7 @@ public class abilityScoreModifier {
     public static int number;
 
     // put try catch statement for modifier values associated with ability scores
-    public int modifierIndex(int abilityNum){
+    public static int modifierIndex(int abilityNum){
         if (abilityNum == 1){
             number = -5;
         } else if (abilityNum == 2 || abilityNum == 3){
@@ -49,29 +49,25 @@ public class abilityScoreModifier {
         return number;
     }
 
-    public void setStrMod(int strMod) {
-        this.strMod = modifierIndex(abilityScores.getStrength());
+    public static void setStrMod(int strMod) { strMod = modifierIndex(abilityScores.getStrength()); }
+
+    public static void setDexMod(int dexMod) {
+        dexMod = modifierIndex(abilityScores.getDexterity());
     }
 
-    public void setDexMod(int dexMod) {
-        this.dexMod = modifierIndex(abilityScores.getDexterity());
+    public static void setConMod(int conMod) {
+        conMod = modifierIndex(abilityScores.getConstitution());
     }
 
-    public void setConMod(int conMod) {
-        this.conMod = modifierIndex(abilityScores.getConstitution());
+    public static void setIntMod(int intMod) {
+        intMod = modifierIndex(abilityScores.getIntelligence());
     }
 
-    public void setIntMod(int intMod) {
-        this.intMod = modifierIndex(abilityScores.getIntelligence());
+    public static void setWisMod(int wisMod) {
+        wisMod = modifierIndex(abilityScores.getWisdom());
     }
 
-    public void setWisMod(int wisMod) {
-        this.wisMod = modifierIndex(abilityScores.getWisdom());
-    }
-
-    public void setCharMod(int charMod) {
-        this.charMod = modifierIndex(abilityScores.getCharisma());
-    }
+    public static void setCharMod(int charMod) { charMod = modifierIndex(abilityScores.getCharisma()); }
 
     public static int getStrMod() {
         return strMod;

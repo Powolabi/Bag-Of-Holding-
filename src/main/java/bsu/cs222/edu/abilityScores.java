@@ -24,9 +24,7 @@ public class abilityScores {
         Intelligence = intelligence;
     }
 
-    public static void setWisdom(int wisdom) {
-        Wisdom = wisdom;
-    }
+    public static void setWisdom(int wisdom) { Wisdom = wisdom; }
 
     public static void setCharisma(int charisma) {
         Charisma = charisma;
