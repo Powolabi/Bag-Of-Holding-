@@ -1,58 +1,58 @@
 package bsu.cs222.edu;
 
 public class abilityScores {
-    public abilityScores Strength;
-    public abilityScores Dexterity;
-    public abilityScores Constitution;
-    public abilityScores Intelligence;
-    public abilityScores Wisdom;
-    public abilityScores Charisma;
+    public int Strength;
+    public int Dexterity;
+    public int Constitution;
+    public int Intelligence;
+    public int Wisdom;
+    public int Charisma;
 
-    public void setStrength(abilityScores strength) {
+    public void setStrength(int strength) {
         Strength = strength;
     }
 
-    public void setDexterity(abilityScores dexterity) {
+    public void setDexterity(int dexterity) {
         Dexterity = dexterity;
     }
 
-    public void setConstitution(abilityScores constitution) {
+    public void setConstitution(int constitution) {
         Constitution = constitution;
     }
 
-    public void setIntelligence(abilityScores intelligence) {
+    public void setIntelligence(int intelligence) {
         Intelligence = intelligence;
     }
 
-    public void setWisdom(abilityScores wisdom) {
+    public void setWisdom(int wisdom) {
         Wisdom = wisdom;
     }
 
-    public void setCharisma(abilityScores charisma) {
+    public void setCharisma(int charisma) {
         Charisma = charisma;
     }
 
-    public abilityScores getStrength() {
+    public int getStrength() {
         return Strength;
     }
 
-    public abilityScores getDexterity() {
+    public int getDexterity() {
         return Dexterity;
     }
 
-    public abilityScores getConstitution() {
+    public int getConstitution() {
         return Constitution;
     }
 
-    public abilityScores getIntelligence() {
+    public int getIntelligence() {
         return Intelligence;
     }
 
-    public abilityScores getWisdom() {
+    public int getWisdom() {
         return Wisdom;
     }
 
-    public abilityScores getCharisma() {
+    public int getCharisma() {
         return Charisma;
     }
 }

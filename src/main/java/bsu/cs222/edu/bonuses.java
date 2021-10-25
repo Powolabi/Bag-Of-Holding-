@@ -1,58 +1,58 @@
 package bsu.cs222.edu;
 
 public class bonuses {
-    private bonuses Strength;
-    private bonuses Dexterity;
-    private bonuses Constitution;
-    private bonuses Intelligence;
-    private bonuses Wisdom;
-    private bonuses Charisma;
+    private int Strength;
+    private int Dexterity;
+    private int Constitution;
+    private int Intelligence;
+    private int Wisdom;
+    private int Charisma;
 
-    public void setStrengthBonus(bonuses strength) {
+    public void setStrengthBonus(int strength) {
         Strength = strength;
     }
 
-    public void setDexterityBonus(bonuses dexterity) {
+    public void setDexterityBonus(int dexterity) {
         Dexterity = dexterity;
     }
 
-    public void setConstitutionBonus(bonuses constitution) {
+    public void setConstitutionBonus(int constitution) {
         Constitution = constitution;
     }
 
-    public void setIntelligenceBonus(bonuses intelligence) {
+    public void setIntelligenceBonus(int intelligence) {
         Intelligence = intelligence;
     }
 
-    public void setWisdomBonus(bonuses wisdom) {
+    public void setWisdomBonus(int wisdom) {
         Wisdom = wisdom;
     }
 
-    public void setCharismaBonus(bonuses charisma) {
+    public void setCharismaBonus(int charisma) {
         Charisma = charisma;
     }
 
-    public bonuses getStrengthBonus(){
+    public int getStrengthBonus(){
         return Strength;
     }
 
-    public bonuses getDexterityBonus() {
+    public int getDexterityBonus() {
         return Dexterity;
     }
 
-    public bonuses getConstitutionBonus() {
+    public int getConstitutionBonus() {
         return Constitution;
     }
 
-    public bonuses getIntelligenceBonus() {
+    public int getIntelligenceBonus() {
         return Intelligence;
     }
 
-    public bonuses getWisdomBonus() {
+    public int getWisdomBonus() {
         return Wisdom;
     }
 
-    public bonuses getCharismaBonus() {
+    public int getCharismaBonus() {
         return Charisma;
     }
 }
