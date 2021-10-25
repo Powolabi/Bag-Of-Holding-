@@ -1,58 +1,56 @@
 package bsu.cs222.edu;
 
 public class bonuses {
-    private int Strength;
-    private int Dexterity;
-    private int Constitution;
-    private int Intelligence;
-    private int Wisdom;
-    private int Charisma;
+    private static int Strength;
+    private static int Dexterity;
+    private static int Constitution;
+    private static int Intelligence;
+    private static int Wisdom;
+    private static int Charisma;
 
-    public void setStrengthBonus(int strength) {
+    public static void setStrengthBonus(int strength) {
         Strength = strength;
     }
 
-    public void setDexterityBonus(int dexterity) {
+    public static void setDexterityBonus(int dexterity) {
         Dexterity = dexterity;
     }
 
-    public void setConstitutionBonus(int constitution) {
+    public static void setConstitutionBonus(int constitution) {
         Constitution = constitution;
     }
 
-    public void setIntelligenceBonus(int intelligence) {
-        Intelligence = intelligence;
-    }
+    public static void setIntelligenceBonus(int intelligence) { Intelligence = intelligence; }
 
-    public void setWisdomBonus(int wisdom) {
+    public static void setWisdomBonus(int wisdom) {
         Wisdom = wisdom;
     }
 
-    public void setCharismaBonus(int charisma) {
+    public static void setCharismaBonus(int charisma) {
         Charisma = charisma;
     }
 
-    public int getStrengthBonus(){
+    public static int getStrengthBonus(){
         return Strength;
     }
 
-    public int getDexterityBonus() {
+    public static int getDexterityBonus() {
         return Dexterity;
     }
 
-    public int getConstitutionBonus() {
+    public static int getConstitutionBonus() {
         return Constitution;
     }
 
-    public int getIntelligenceBonus() {
+    public static int getIntelligenceBonus() {
         return Intelligence;
     }
 
-    public int getWisdomBonus() {
+    public static int getWisdomBonus() {
         return Wisdom;
     }
 
-    public int getCharismaBonus() {
+    public static int getCharismaBonus() {
         return Charisma;
     }
 }
