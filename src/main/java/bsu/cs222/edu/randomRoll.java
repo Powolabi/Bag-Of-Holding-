@@ -1,7 +1,7 @@
 package bsu.cs222.edu;
 
 public class randomRoll {
-
+/*
     public static int rollOfFour(){
         int four;
 
@@ -33,4 +33,5 @@ public class randomRoll {
 
         return twenty;
     }
+    */
 }
