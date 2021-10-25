@@ -8,51 +8,51 @@ public class bonuses {
     private bonuses Wisdom;
     private bonuses Charisma;
 
-    public void setStrength(bonuses strength) {
+    public void setStrengthBonus(bonuses strength) {
         Strength = strength;
     }
 
-    public void setDexterity(bonuses dexterity) {
+    public void setDexterityBonus(bonuses dexterity) {
         Dexterity = dexterity;
     }
 
-    public void setConstitution(bonuses constitution) {
+    public void setConstitutionBonus(bonuses constitution) {
         Constitution = constitution;
     }
 
-    public void setIntelligence(bonuses intelligence) {
+    public void setIntelligenceBonus(bonuses intelligence) {
         Intelligence = intelligence;
     }
 
-    public void setWisdom(bonuses wisdom) {
+    public void setWisdomBonus(bonuses wisdom) {
         Wisdom = wisdom;
     }
 
-    public void setCharisma(bonuses charisma) {
+    public void setCharismaBonus(bonuses charisma) {
         Charisma = charisma;
     }
 
-    public bonuses getStrength(){
+    public bonuses getStrengthBonus(){
         return Strength;
     }
 
-    public bonuses getDexterity() {
+    public bonuses getDexterityBonus() {
         return Dexterity;
     }
 
-    public bonuses getConstitution() {
+    public bonuses getConstitutionBonus() {
         return Constitution;
     }
 
-    public bonuses getIntelligence() {
+    public bonuses getIntelligenceBonus() {
         return Intelligence;
     }
 
-    public bonuses getWisdom() {
+    public bonuses getWisdomBonus() {
         return Wisdom;
     }
 
-    public bonuses getCharisma() {
+    public bonuses getCharismaBonus() {
         return Charisma;
     }
 }
