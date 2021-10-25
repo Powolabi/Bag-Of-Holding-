@@ -27,6 +27,79 @@ public class skills {
     public int performance;
     public int persuasion;
 
+    public int getAcrobatics() {
+        return acrobatics;
+    }
 
+    public int getAnimalHandling() {
+        return animalHandling;
+    }
 
+    public int getArcana() {
+        return arcana;
+    }
+
+    public int getAthletics() {
+        return athletics;
+    }
+
+    public int getDeception() {
+        return deception;
+    }
+
+    public int getHistory() {
+        return history;
+    }
+
+    public int getInsight() {
+        return insight;
+    }
+
+    public int getIntimidation() {
+        return intimidation;
+    }
+
+    public int getInvestigation() {
+        return investigation;
+    }
+
+    public int getMedicine() {
+        return medicine;
+    }
+
+    public int getNature() {
+        return nature;
+    }
+
+    public int getPerception() {
+        return perception;
+    }
+
+    public int getPerformance() {
+        return performance;
+    }
+
+    public int getPersuasion() {
+        return persuasion;
+    }
+
+    public int getProficiency() {
+        return proficiency;
+    }
+
+    public int getReligion() {
+        return religion;
+    }
+
+    public int getSleightOfHand() {
+        return sleightOfHand;
+    }
+
+    public int getStealth() {
+        return stealth;
+    }
+
+    public int getSurvival() {
+        return survival;
+    }
 }
