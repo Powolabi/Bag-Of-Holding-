@@ -1,42 +1,42 @@
 package bsu.cs222.edu;
 
+import java.util.Random;
+
 public class randomRoll {
-/*
     // random value between 1 and 4
     public static int rollOfFour(){
-        int four;
+        Random rand = new Random();
 
-        return four;
+        return rand.nextInt(4) + 1;
     }
     // random value between 1 and 6
     public static int rollOfSix(){
-        int six;
+        Random rand = new Random();
 
-        return six;
+        return rand.nextInt(6) + 1;
     }
     // random value between 1 and 8
     public static int rollOfEight(){
-        int eight;
+        Random rand = new Random();
 
-        return eight;
+        return rand.nextInt(8) + 1;
     }
     // random value between 1 and 10
     public static int rollOfTen(){
-        int ten;
+        Random rand = new Random();
 
-        return ten;
+        return rand.nextInt(10) + 1;
     }
     // random value between 1 and 12
     public static int rollOfTwelve(){
-        int twelve;
+        Random rand = new Random();
 
-        return twelve;
+        return rand.nextInt(12) + 1;
     }
     // random value between 1 and 20
     public static int rollOfTwenty(){
-        int twenty;
+        Random rand = new Random();
 
-        return twenty;
+        return rand.nextInt(20) + 1;
     }
-    */
 }
