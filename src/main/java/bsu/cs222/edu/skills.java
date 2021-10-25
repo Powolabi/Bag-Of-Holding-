@@ -27,79 +27,43 @@ public class skills {
     public static int performance;
     public static int persuasion;
 
-    public static int getAcrobatics() {
-        return acrobatics;
-    }
+    //find way to set this in efficient way
 
-    public static int getAnimalHandling() {
-        return animalHandling;
-    }
+    public static int getAcrobatics() { return acrobatics; }
 
-    public static int getArcana() {
-        return arcana;
-    }
+    public static int getAnimalHandling() { return animalHandling; }
 
-    public static int getAthletics() {
-        return athletics;
-    }
+    public static int getArcana() { return arcana; }
 
-    public static int getDeception() {
-        return deception;
-    }
+    public static int getAthletics() { return athletics; }
 
-    public static int getHistory() {
-        return history;
-    }
+    public static int getDeception() { return deception; }
 
-    public static int getInsight() {
-        return insight;
-    }
+    public static int getHistory() { return history; }
 
-    public static int getIntimidation() {
-        return intimidation;
-    }
+    public static int getInsight() { return insight; }
 
-    public static int getInvestigation() {
-        return investigation;
-    }
+    public static int getIntimidation() { return intimidation; }
 
-    public static int getMedicine() {
-        return medicine;
-    }
+    public static int getInvestigation() { return investigation; }
 
-    public static int getNature() {
-        return nature;
-    }
+    public static int getMedicine() { return medicine; }
 
-    public static int getPerception() {
-        return perception;
-    }
+    public static int getNature() { return nature; }
 
-    public static int getPerformance() {
-        return performance;
-    }
+    public static int getPerception() { return perception; }
 
-    public static int getPersuasion() {
-        return persuasion;
-    }
+    public static int getPerformance() { return performance; }
 
-    public static int getProficiency() {
-        return proficiency;
-    }
+    public static int getPersuasion() { return persuasion; }
 
-    public static int getReligion() {
-        return religion;
-    }
+    public static int getProficiency() { return proficiency; }
 
-    public static int getSleightOfHand() {
-        return sleightOfHand;
-    }
+    public static int getReligion() { return religion; }
 
-    public static int getStealth() {
-        return stealth;
-    }
+    public static int getSleightOfHand() { return sleightOfHand; }
 
-    public static int getSurvival() {
-        return survival;
-    }
+    public static int getStealth() { return stealth; }
+
+    public static int getSurvival() { return survival; }
 }
