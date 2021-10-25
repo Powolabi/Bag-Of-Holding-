@@ -6,6 +6,8 @@ public class currency {
     public int gold = 0;
     public int platinum = 0;
 
+    // add currency conversion
+
     public void addCopper(int copperAdded){
         this.copper += copperAdded;
     }
