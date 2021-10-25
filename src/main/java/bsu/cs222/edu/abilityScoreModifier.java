@@ -1,13 +1,13 @@
 package bsu.cs222.edu;
 
 public class abilityScoreModifier {
-    public int strMod;
-    public int dexMod;
-    public int conMod;
-    public int intMod;
-    public int wisMod;
-    public int charMod;
-    public int number;
+    public static int strMod;
+    public static int dexMod;
+    public static int conMod;
+    public static int intMod;
+    public static int wisMod;
+    public static int charMod;
+    public static int number;
 
     // put try catch statement for modifier values associated with ability scores
     public int modifierIndex(int abilityNum){
@@ -50,50 +50,50 @@ public class abilityScoreModifier {
     }
 
     public void setStrMod(int strMod) {
-        this.strMod = modifierIndex(strMod);
+        this.strMod = modifierIndex(abilityScores.getStrength());
     }
 
     public void setDexMod(int dexMod) {
-        this.dexMod = modifierIndex(dexMod);
+        this.dexMod = modifierIndex(abilityScores.getDexterity());
     }
 
     public void setConMod(int conMod) {
-        this.conMod = modifierIndex(conMod);
+        this.conMod = modifierIndex(abilityScores.getConstitution());
     }
 
     public void setIntMod(int intMod) {
-        this.intMod = modifierIndex(intMod);
+        this.intMod = modifierIndex(abilityScores.getIntelligence());
     }
 
     public void setWisMod(int wisMod) {
-        this.wisMod = modifierIndex(wisMod);
+        this.wisMod = modifierIndex(abilityScores.getWisdom());
     }
 
     public void setCharMod(int charMod) {
-        this.charMod = modifierIndex(charMod);
+        this.charMod = modifierIndex(abilityScores.getCharisma());
     }
 
-    public int getStrMod() {
+    public static int getStrMod() {
         return strMod;
     }
 
-    public int getDexMod() {
+    public static int getDexMod() {
         return dexMod;
     }
 
-    public int getConMod() {
+    public static int getConMod() {
         return conMod;
     }
 
-    public int getIntMod() {
+    public static int getIntMod() {
         return intMod;
     }
 
-    public int getWisMod() {
+    public static int getWisMod() {
         return wisMod;
     }
 
-    public int getCharMod() {
+    public static int getCharMod() {
         return charMod;
     }
 }

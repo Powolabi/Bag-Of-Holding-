@@ -1,58 +1,58 @@
 package bsu.cs222.edu;
 
 public class abilityScores {
-    public int Strength;
-    public int Dexterity;
-    public int Constitution;
-    public int Intelligence;
-    public int Wisdom;
-    public int Charisma;
+    public static int Strength;
+    public static int Dexterity;
+    public static int Constitution;
+    public static int Intelligence;
+    public static int Wisdom;
+    public static int Charisma;
 
     public void setStrength(int strength) {
-        Strength = strength;
+        this.Strength = strength;
     }
 
     public void setDexterity(int dexterity) {
-        Dexterity = dexterity;
+        this.Dexterity = dexterity;
     }
 
     public void setConstitution(int constitution) {
-        Constitution = constitution;
+        this.Constitution = constitution;
     }
 
     public void setIntelligence(int intelligence) {
-        Intelligence = intelligence;
+        this.Intelligence = intelligence;
     }
 
     public void setWisdom(int wisdom) {
-        Wisdom = wisdom;
+        this.Wisdom = wisdom;
     }
 
     public void setCharisma(int charisma) {
-        Charisma = charisma;
+        this.Charisma = charisma;
     }
 
-    public int getStrength() {
+    public static int getStrength() {
         return Strength;
     }
 
-    public int getDexterity() {
+    public static int getDexterity() {
         return Dexterity;
     }
 
-    public int getConstitution() {
+    public static int getConstitution() {
         return Constitution;
     }
 
-    public int getIntelligence() {
+    public static int getIntelligence() {
         return Intelligence;
     }
 
-    public int getWisdom() {
+    public static int getWisdom() {
         return Wisdom;
     }
 
-    public int getCharisma() {
+    public static int getCharisma() {
         return Charisma;
     }
 }

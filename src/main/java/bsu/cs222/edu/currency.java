@@ -1,10 +1,10 @@
 package bsu.cs222.edu;
 
 public class currency {
-    public int copper = 0;
-    public int silver = 0;
-    public int gold = 0;
-    public int platinum = 0;
+    public static int copper = 0;
+    public static int silver = 0;
+    public static int gold = 0;
+    public static int platinum = 0;
 
     // add currency conversion
 
