@@ -8,28 +8,28 @@ public class abilityScores {
     public static int Wisdom;
     public static int Charisma;
 
-    public void setStrength(int strength) {
-        this.Strength = strength;
+    public static void setStrength(int strength) {
+        Strength = strength;
     }
 
-    public void setDexterity(int dexterity) {
-        this.Dexterity = dexterity;
+    public static void setDexterity(int dexterity) {
+        Dexterity = dexterity;
     }
 
-    public void setConstitution(int constitution) {
-        this.Constitution = constitution;
+    public static void setConstitution(int constitution) {
+        Constitution = constitution;
     }
 
-    public void setIntelligence(int intelligence) {
-        this.Intelligence = intelligence;
+    public static void setIntelligence(int intelligence) {
+        Intelligence = intelligence;
     }
 
-    public void setWisdom(int wisdom) {
-        this.Wisdom = wisdom;
+    public static void setWisdom(int wisdom) {
+        Wisdom = wisdom;
     }
 
-    public void setCharisma(int charisma) {
-        this.Charisma = charisma;
+    public static void setCharisma(int charisma) {
+        Charisma = charisma;
     }
 
     public static int getStrength() {

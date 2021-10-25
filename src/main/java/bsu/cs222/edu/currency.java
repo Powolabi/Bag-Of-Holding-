@@ -8,35 +8,31 @@ public class currency {
 
     // add currency conversion
 
-    public void addCopper(int copperAdded){
-        this.copper += copperAdded;
+    public static void addCopper(int copperAdded){ copper += copperAdded; }
+
+    public static void addSilver(int silverAdded){
+        silver += silverAdded;
     }
 
-    public void addSilver(int silverAdded){
-        this.silver += silverAdded;
+    public static void addGold(int goldAdded){
+        gold += goldAdded;
     }
 
-    public void addGold(int goldAdded){
-        this.gold += goldAdded;
+    public static void addPlatinum(int platinumAdded){
+        platinum += platinumAdded;
     }
 
-    public void addPlatinum(int platinumAdded){
-        this.platinum += platinumAdded;
+    public static void subtractCopper(int copperSubtracted){ copper -= copperSubtracted; }
+
+    public static void subtractSilver(int silverSubtracted){
+        silver -= silverSubtracted;
     }
 
-    public void subtractCopper(int copperSubtracted){
-        this.copper -= copperSubtracted;
+    public static void subtractGold(int goldSubtracted){
+        silver -= goldSubtracted;
     }
 
-    public void subtractSilver(int silverSubtracted){
-        this.silver -= silverSubtracted;
-    }
-
-    public void subtractGold(int goldSubtracted){
-        this.silver -= goldSubtracted;
-    }
-
-    public void subtractPlatinum(int platinumSubtracted){
-        this.platinum -= platinumSubtracted;
+    public static void subtractPlatinum(int platinumSubtracted){
+        platinum -= platinumSubtracted;
     }
 }
