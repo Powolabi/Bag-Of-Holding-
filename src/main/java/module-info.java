@@ -1,4 +1,4 @@
-module bsu.cs222.edu {
+module edu.bsu.cs {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -10,6 +10,6 @@ module bsu.cs222.edu {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens bsu.cs222.edu to javafx.fxml;
-    exports bsu.cs222.edu;
+    opens edu.bsu.cs222 to javafx.fxml;
+    exports edu.bsu.cs222;
 }
