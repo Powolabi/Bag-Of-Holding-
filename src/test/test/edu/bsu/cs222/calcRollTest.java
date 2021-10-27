@@ -3,7 +3,7 @@ package edu.bsu.cs222;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class calcRollTest {
+class calcRollTest {
     @Test
     public void rollOfFourTest(){
         int test = randomRoll.rollOfFour();
@@ -12,7 +12,7 @@ public class calcRollTest {
     @Test
     public void rollOfSixTest(){
         int test = randomRoll.rollOfSix();
-        Assertions.assertTrue(test >= 1 && test <= 6);
+        Assertions.assertTrue(test < 1 || test > 6);
     }
     @Test
     public void rollOfEightTest(){
