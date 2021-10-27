@@ -4,7 +4,7 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
-group 'bsu.cs222.edu'
+group 'edu.bsu.cs222'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -23,8 +23,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'bsu.cs222.edu'
-    mainClass = 'bsu.cs222.edu.HelloApplication'
+    mainModule = 'edu.bsu.cs222'
+    mainClass = 'edu.bsu.cs222.HelloApplication'
 }
 
 javafx {
