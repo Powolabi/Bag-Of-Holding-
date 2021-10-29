@@ -1,5 +1,5 @@
 package edu.bsu.cs222;
 
 public class items {
-    // get list of items, a directory of node item
+    // sorting algo of item.java data
 }
