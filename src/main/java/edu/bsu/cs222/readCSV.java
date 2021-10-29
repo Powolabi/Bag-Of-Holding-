@@ -9,10 +9,11 @@ public class readCSV {
     public static void scanFile(){
         Scanner sc;
         try {
-            sc = new Scanner(new File("F:\\CSVDemo.csv"));
+            sc = new Scanner(new File("C:equipment.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
     }
 
 
