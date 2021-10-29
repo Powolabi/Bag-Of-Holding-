@@ -12,7 +12,7 @@ class calcRollTest {
     @Test
     public void rollOfSixTest(){
         int test = randomRoll.rollOfSix();
-        Assertions.assertTrue(test < 1 || test > 6);
+        Assertions.assertTrue(test < 1 || test <= 6);
     }
     @Test
     public void rollOfEightTest(){
