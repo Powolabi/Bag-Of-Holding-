@@ -10,6 +10,7 @@ public class abilityScoreModifier {
     public static int number;
 
     // put try catch statement for modifier values associated with ability scores
+    // change to switch
     public static int modifierIndex(int abilityNum){
         if (abilityNum == 1){
             number = -5;
