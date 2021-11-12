@@ -6,6 +6,6 @@ import org.junit.jupiter.api.Test;
 public class readCSVTest {
     @Test
     public void scanFileTest(){
-        readCSV.scanFile();
+        readCSV.scanFile("equipment.csv");
     }
 }

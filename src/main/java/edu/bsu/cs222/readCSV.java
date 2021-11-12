@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class readCSV {
 
-    public static void scanFile(){
+    public static void scanFile(String fileName){
         Scanner sc = null;
-        InputStream csv = Thread.currentThread().getContextClassLoader().getResourceAsStream("equipment.csv");
+        InputStream csv = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
         sc = new Scanner(csv);
         sc.useDelimiter(",");
         while (sc.hasNext()){
