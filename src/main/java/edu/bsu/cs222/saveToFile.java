@@ -20,6 +20,34 @@ public class saveToFile {
     // Convert them to string type, tie all like information.
     // if its a new item or larger piece of data, create a new line.
     public static void parseData(String toStore){
+        switch(toStore) {
+            case "Item": saveTypeItem();
+            case "Class": saveTypeClass();
+            case "Spell": saveTypeSpell();
+            case "Race": saveTypeRace();
+            case "Character": saveTypeCharacter();
+            default: saveTypeNotes();
 
+                break;
+        }
+
+    }
+
+    private static void saveTypeNotes() {
+    }
+
+    private static void saveTypeCharacter() {
+    }
+
+    private static void saveTypeRace() {
+    }
+
+    private static void saveTypeSpell() {
+    }
+
+    private static void saveTypeClass() {
+    }
+
+    private static void saveTypeItem() {
     }
 }
