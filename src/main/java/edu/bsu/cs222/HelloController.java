@@ -11,12 +11,6 @@ public class HelloController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("New session?\n");
-        RadioButton yes = new RadioButton();
-        RadioButton no = new RadioButton();
-        if(yes.isSelected()){
 
-        } else if (no.isSelected()){
-
-        }
     }
 }

@@ -10,56 +10,54 @@ public class characterDetails {
     public static int speed;
     public static int level;
 
-    public characterDetails(String name, String race, String alignment, String characterClass, int hitPoints,
-                            int armorClass, int speed, int level)
-    {
-        this.name = name;
-        this.race = race;
-        this.alignment = alignment;
-        this.characterClass = characterClass;
-        this.hitPoints = hitPoints;
-        this.armorClass = armorClass;
-        this.speed = speed;
-        this.level = level;
+    public characterDetails(String text, String text1, String text2, String text3, int parseInt, int parseInt1, int parseInt2, int parseInt3) {
+        characterDetails.name = text;
+        characterDetails.race = text1;
+        characterDetails.alignment = text2;
+        characterDetails.characterClass = text3;
+        characterDetails.hitPoints = parseInt;
+        characterDetails.armorClass = parseInt1;
+        characterDetails.speed = parseInt2;
+        characterDetails.level = parseInt3;
     }
 
     public String getName()
     {
-        return this.name;
+        return name;
     }
 
     public String getRace()
     {
-        return this.race;
+        return race;
     }
 
     public String getAlignment()
     {
-        return this.alignment;
+        return alignment;
     }
 
     public String getCharacterClass()
     {
-        return this.characterClass;
+        return characterClass;
     }
 
     public int getHitPoints()
     {
-        return this.hitPoints;
+        return hitPoints;
     }
 
     public int getArmorClass()
     {
-        return this.armorClass;
+        return armorClass;
     }
 
     public int getSpeed()
     {
-        return this.speed;
+        return speed;
     }
 
     public int getLevel()
     {
-        return this.level;
+        return level;
     }
 }
