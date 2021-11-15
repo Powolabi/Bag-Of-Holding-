@@ -11,13 +11,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class HelloApplication extends Application {
     private static final Queue<characterDetails> characterInfo = new LinkedList<>();
     //private static final Queue<abilityScores> abilityScores = new LinkedList<>();
     @Override
     public void start(Stage stage) throws IOException {
-        int count = 0;
+        AtomicInteger count = new AtomicInteger();
         String characterName, playerCount;
 
 
@@ -57,7 +58,7 @@ public class HelloApplication extends Application {
         playerCnt.getChildren().addAll(pcCount, inputPCCount, submitPlayerCount);
         Scene playerCountScene = new Scene(playerCnt);
 
-        //  //
+        // Dungeon master -> Player characters set up //
         Label label = new Label("Enter the Character details");
         TextField charName = new TextField();
         charName.setPromptText("Character Name");
@@ -87,7 +88,7 @@ public class HelloApplication extends Application {
         Button subm = new Button("Submit");
 
         VBox vbox = new VBox(10);
-        vbox.getChildren().addAll(label, charName, race, characterClass, alignment, hitpoints, ac, speed, level, subm);
+        vbox.getChildren().addAll(label, charName, race, characterClass, alignment, hitpoints, ac, speed, level, subm, numTimes);
         Scene dmSetPC = new Scene(vbox);
 
         subm.setOnAction( e -> { try{
@@ -101,9 +102,13 @@ public class HelloApplication extends Application {
                 ac.clear();
                 speed.clear();
                 level.clear();
+                if(count.get() <= 4){
+                    count.addAndGet(1);
+                } else {
+                    count.set(0);
+                }
             }
         });
-        //clear fields after button click
 
         // if PC -> input character name
         Label inputLabel = new Label("What is your characters name?");
