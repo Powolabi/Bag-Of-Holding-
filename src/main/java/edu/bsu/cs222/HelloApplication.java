@@ -90,7 +90,20 @@ public class HelloApplication extends Application {
         vbox.getChildren().addAll(label, charName, race, characterClass, alignment, hitpoints, ac, speed, level, subm);
         Scene dmSetPC = new Scene(vbox);
 
-        subm.setOnAction(e -> characterInfo.add(new characterDetails(name.getText(), race.getText(), characterClass.getText(), alignment.getText(), Integer.parseInt(hitpoints.getText()), Integer.parseInt(ac.getText()), Integer.parseInt(speed.getText()), Integer.parseInt(level.getText()))));
+        subm.setOnAction( e -> { try{
+                characterInfo.add(new characterDetails(name.getText(), race.getText(), characterClass.getText(), alignment.getText(), Integer.parseInt(hitpoints.getText()), Integer.parseInt(ac.getText()), Integer.parseInt(speed.getText()), Integer.parseInt(level.getText())));
+            }finally {
+                charName.clear();
+                race.clear();
+                characterClass.clear();
+                alignment.clear();
+                hitpoints.clear();
+                ac.clear();
+                speed.clear();
+                level.clear();
+            }
+        });
+        //clear fields after button click
 
         // if PC -> input character name
         Label inputLabel = new Label("What is your characters name?");
