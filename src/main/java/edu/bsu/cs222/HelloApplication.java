@@ -7,6 +7,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -154,16 +155,16 @@ public class HelloApplication extends Application {
 
     public void writeNewPlayerCharacter(Queue<characterDetails> qCharDetails) {
         try {
-            FileWriter myObj = new FileWriter( "C:\\Users\\brend\\IdeaProjects\\Final-Project-Brendan-Peter-Micah\\src\\main\\resources\\users.txt");
+            FileWriter myObj = new FileWriter( "C:\\Users\\brend\\IdeaProjects\\Final-Project-Brendan-Peter-Micah\\src\\main\\resources\\users.txt", true);
 
             for (characterDetails c : qCharDetails) {
-                myObj.write(c.getName());
-                myObj.write(c.getRace());
-                myObj.write(c.getCharacterClass());
-                myObj.write(c.getArmorClass());
-                myObj.write(c.getAlignment());
-                myObj.write(c.getHitPoints());
-                myObj.write(c.getArmorClass());
+                myObj.write(c.getName() + ".");
+                myObj.write(c.getRace()+ ".");
+                myObj.write(c.getCharacterClass()+ ".");
+                myObj.write(c.getArmorClass()+ ".");
+                myObj.write(c.getAlignment()+ ".");
+                myObj.write(c.getHitPoints()+ ".");
+                myObj.write(c.getArmorClass()+ ".");
                 myObj.write(c.getLevel());
                 myObj.write("\n");
                 myObj.write("-");
