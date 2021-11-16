@@ -7,18 +7,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class HelloApplication extends Application {
-    private static final Queue<characterDetails> characterInfo = new LinkedList<>();
+    public static final Queue<characterDetails> characterInfo = new LinkedList<>();
     //private static final Queue<abilityScores> abilityScores = new LinkedList<>();
-    private static int hold;
     @Override
     public void start(Stage stage) throws IOException {
         AtomicInteger count = new AtomicInteger();
@@ -79,12 +76,11 @@ public class HelloApplication extends Application {
         TextField level = new TextField();
         level.setPromptText("Character Level");
 
-        Label numTimes = new Label("" + count + "/" + hold + " Player Characters");
         Button subm = new Button("Submit");
         Button done = new Button("Done");
 
         VBox vbox = new VBox(10);
-        vbox.getChildren().addAll(label, charName, race, characterClass, alignment, hitpoints, ac, speed, level, subm, numTimes);
+        vbox.getChildren().addAll(label, charName, race, characterClass, alignment, hitpoints, ac, speed, level, subm);
         Scene dmSetPC = new Scene(vbox);
 
         // Ability scores Scene
@@ -92,27 +88,6 @@ public class HelloApplication extends Application {
         VBox vBox = new VBox(10);
         vBox.getChildren().addAll();
         Scene abilScore = new Scene(vBox);
-
-        subm.setOnAction( e -> { try{
-                characterInfo.add(new characterDetails(name.getText(), race.getText(), characterClass.getText(), alignment.getText(), Integer.parseInt(hitpoints.getText()), Integer.parseInt(ac.getText()), Integer.parseInt(speed.getText()), Integer.parseInt(level.getText())));
-            }finally {
-                charName.clear();
-                race.clear();
-                characterClass.clear();
-                alignment.clear();
-                hitpoints.clear();
-                ac.clear();
-                speed.clear();
-                level.clear();
-                count.addAndGet(1);
-
-                stage.setScene(abilScore);
-        }
-        });
-
-        done.setOnAction(e -> {
-            stage.setScene(dmSetPC);
-        });
 
         // if PC -> input character name
         Label inputLabel = new Label("Character Details");
@@ -144,16 +119,30 @@ public class HelloApplication extends Application {
         Scene userCharacterScene = new Scene(characterNameSet);
 
         //oldSession.setOnAction(e -> stage.setScene());
+        subm.setOnAction( e -> { try{
+            characterInfo.add( new characterDetails(name.getText(), race.getText(), characterClass.getText(), alignment.getText(), Integer.parseInt(hitpoints.getText()), Integer.parseInt(ac.getText()), Integer.parseInt(speed.getText()), Integer.parseInt(level.getText())));
+            writeNewPlayerCharacter(characterInfo);
+        }finally {
+            charName.clear();
+            race.clear();
+            characterClass.clear();
+            alignment.clear();
+            hitpoints.clear();
+            ac.clear();
+            speed.clear();
+            level.clear();
+            count.addAndGet(1);
+
+            stage.setScene(abilScore);
+        }
+        });
+        done.setOnAction(e -> stage.setScene(dmSetPC));
         newSession.setOnAction(e -> stage.setScene(PD));
         dMaster.setOnAction(e -> stage.setScene(playerCountScene));
-        submitPlayerCount.setOnAction(e -> {
-            hold = getInt(inputPCCount.getText().trim());
-            System.out.println(hold);
-            stage.setScene(dmSetPC);
-        });
+        submitPlayerCount.setOnAction(e -> stage.setScene(dmSetPC));
         player.setOnAction(e -> stage.setScene(userCharacterScene));
         submitCharacterAlignment.setOnAction(e -> {
-                writeNewUser(input, inputRace, inputClass, inputAlignment);
+                //writeNewPlayerCharacter();
                 stage.setScene(userCharacterScene);
         });
 
@@ -163,26 +152,26 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public void writeNewUser(TextField... textFields) {
+    public void writeNewPlayerCharacter(Queue<characterDetails> qCharDetails) {
         try {
             FileWriter myObj = new FileWriter( "C:\\Users\\brend\\IdeaProjects\\Final-Project-Brendan-Peter-Micah\\src\\main\\resources\\users.txt");
 
-            for (TextField i : textFields){
-                myObj.write(i.getText());
-                System.out.println("print");
+            for (characterDetails c : qCharDetails) {
+                myObj.write(c.getName());
+                myObj.write(c.getRace());
+                myObj.write(c.getCharacterClass());
+                myObj.write(c.getArmorClass());
+                myObj.write(c.getAlignment());
+                myObj.write(c.getHitPoints());
+                myObj.write(c.getArmorClass());
+                myObj.write(c.getLevel());
+                myObj.write("\n");
+                myObj.write("-");
+                myObj.write("\n");
             }
-            myObj.write("-");
-
+            myObj.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    public int getInt(String test){
-        try{
-            return Integer.parseInt(test.trim());
-        }catch(Exception e){
-            return 0;
         }
     }
 

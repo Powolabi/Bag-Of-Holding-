@@ -13,8 +13,8 @@ public class characterDetails {
     public characterDetails(String text, String text1, String text2, String text3, int parseInt, int parseInt1, int parseInt2, int parseInt3) {
         characterDetails.name = text;
         characterDetails.race = text1;
-        characterDetails.alignment = text2;
-        characterDetails.characterClass = text3;
+        characterDetails.characterClass = text2;
+        characterDetails.alignment = text3;
         characterDetails.hitPoints = parseInt;
         characterDetails.armorClass = parseInt1;
         characterDetails.speed = parseInt2;
