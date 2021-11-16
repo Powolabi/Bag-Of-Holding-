@@ -8,6 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
@@ -165,16 +166,18 @@ public class HelloApplication extends Application {
     public void writeNewUser(TextField... textFields) {
         PrintWriter fw = null;
         try {
-            fw = new PrintWriter("users.txt");
-            BufferedWriter bufWrite = new BufferedWriter(fw);
+            FileWriter bufWrite = new FileWriter("users.txt");
 
             for (TextField i : textFields){
                 bufWrite.write(i.getText());
+                System.out.println("print");
             }
             bufWrite.write("-");
 
         } catch (IOException e) {
             e.printStackTrace();
+            fw.close();
+        } finally {
             fw.close();
         }
     }
