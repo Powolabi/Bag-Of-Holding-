@@ -166,9 +166,6 @@ public class HelloApplication extends Application {
                 myObj.write(c.getHitPoints()+ ".");
                 myObj.write(c.getArmorClass()+ ".");
                 myObj.write(c.getLevel());
-                myObj.write("\n");
-                myObj.write("-");
-                myObj.write("\n");
             }
             myObj.close();
         } catch (IOException e) {
