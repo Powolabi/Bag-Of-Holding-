@@ -5,12 +5,12 @@ public class characterDetails {
     public static String race;
     public static String alignment;
     public static String characterClass;
-    public static int hitPoints;
-    public static int armorClass;
-    public static int speed;
-    public static int level;
+    public static String  hitPoints;
+    public static String armorClass;
+    public static String speed;
+    public static String level;
 
-    public characterDetails(String text, String text1, String text2, String text3, int parseInt, int parseInt1, int parseInt2, int parseInt3) {
+    public characterDetails(String text, String text1, String text2, String text3, String parseInt, String parseInt1, String parseInt2, String parseInt3) {
         characterDetails.name = text;
         characterDetails.race = text1;
         characterDetails.characterClass = text2;
@@ -41,22 +41,22 @@ public class characterDetails {
         return characterClass;
     }
 
-    public int getHitPoints()
+    public String getHitPoints()
     {
         return hitPoints;
     }
 
-    public int getArmorClass()
+    public String getArmorClass()
     {
         return armorClass;
     }
 
-    public int getSpeed()
+    public String getSpeed()
     {
         return speed;
     }
 
-    public int getLevel()
+    public String getLevel()
     {
         return level;
     }

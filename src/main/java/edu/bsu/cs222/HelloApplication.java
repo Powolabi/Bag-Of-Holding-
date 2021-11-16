@@ -120,7 +120,7 @@ public class HelloApplication extends Application {
 
         //oldSession.setOnAction(e -> stage.setScene());
         subm.setOnAction( e -> { try{
-            characterInfo.add( new characterDetails(name.getText(), race.getText(), characterClass.getText(), alignment.getText(), Integer.parseInt(hitpoints.getText()), Integer.parseInt(ac.getText()), Integer.parseInt(speed.getText()), Integer.parseInt(level.getText())));
+            characterInfo.add( new characterDetails(charName.getText(), race.getText(), characterClass.getText(), alignment.getText(), hitpoints.getText(), ac.getText(), speed.getText(), level.getText()));
             writeNewPlayerCharacter(characterInfo);
         }finally {
             charName.clear();
