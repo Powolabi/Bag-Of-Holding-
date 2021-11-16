@@ -35,8 +35,6 @@ public class HelloApplication extends Application {
         Button player = new Button("Player Character");
         Button dMaster = new Button("Dungeon Master");
 
-        Button submitPOrD = new Button("submit");
-
         HBox playerOrDm = new HBox(10);
         playerOrDm.getChildren().addAll(name, player, dMaster);
         Scene PD = new Scene(playerOrDm);
@@ -110,7 +108,7 @@ public class HelloApplication extends Application {
         });
 
         done.setOnAction(e -> {
-            //stage.setScene();
+            stage.setScene(dmSetPC);
         });
 
         // if PC -> input character name
@@ -125,23 +123,58 @@ public class HelloApplication extends Application {
         Scene characterNameScene = new Scene(characterNameSet);
 
         // Character Race
+        Label inputLabelRace = new Label("What is your characters Race?");
+        TextField inputRace = new TextField();
+        input.setPromptText("Enter Character Name");
+        String characterRace = input.getText();
+        Button submitCharacterRace = new Button("submit");
+
+        HBox characterRaceSet = new HBox();
+        characterRaceSet.getChildren().addAll(inputLabelRace, inputRace, submitCharacterRace);
+        Scene characterRaceScene = new Scene(characterRaceSet);
 
         // Character Class
+        Label inputLabelClass = new Label("What is your characters Class?");
+        TextField inputClass = new TextField();
+        input.setPromptText("Enter Character Name");
+        String charClass = input.getText();
+        Button submitCharacterClass = new Button("submit");
 
-        oldSession.setOnAction(e -> stage.setScene(PD));
+        HBox characterClassSet = new HBox();
+        characterClassSet.getChildren().addAll(inputLabelClass, inputClass, submitCharacterClass);
+        Scene characterClassScene = new Scene(characterClassSet);
+
+        // Alignment
+        Label inputLabelAlignment = new Label("What is your characters Class?");
+        TextField inputAlignment = new TextField();
+        input.setPromptText("Enter Character Name");
+        String characterAlignment = input.getText();
+        Button submitCharacterAlignment = new Button("submit");
+
+        HBox characterAlignmentSet = new HBox();
+        characterAlignmentSet.getChildren().addAll(inputLabelClass, inputClass, submitCharacterClass);
+        Scene characterAlignmentScene = new Scene(characterAlignmentSet);
+
+        // Generate or add Ability Scores
+
+        // AC
+
+        // Hitpoints
+
+
+
+        //oldSession.setOnAction(e -> stage.setScene());
         newSession.setOnAction(e -> stage.setScene(PD));
-
-        // button-on-click scene switch tree for New Campaign
         dMaster.setOnAction(e -> stage.setScene(playerCountScene));
         submitPlayerCount.setOnAction(e -> {
             hold = getInt(inputPCCount.getText().trim());
             System.out.println(hold);
             stage.setScene(dmSetPC);
         });
-
-        // button-on-click scene switch tree for New Player Character
-        submitPOrD.setOnAction(e -> stage.setScene(characterNameScene));
-        //submitCharacterName.setOnAction(e -> stage.setScene());
+        player.setOnAction(e -> stage.setScene(characterNameScene));
+        submitCharacterName.setOnAction(e -> stage.setScene(characterRaceScene));
+        submitCharacterRace.setOnAction(e -> stage.setScene(characterClassScene));
+        submitCharacterClass.setOnAction(e -> stage.setScene(characterAlignmentScene));
 
         // set stage
         stage.setTitle("New Session");
