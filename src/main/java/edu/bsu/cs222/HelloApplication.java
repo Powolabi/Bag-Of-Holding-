@@ -164,21 +164,17 @@ public class HelloApplication extends Application {
     }
 
     public void writeNewUser(TextField... textFields) {
-        PrintWriter fw = null;
         try {
-            FileWriter bufWrite = new FileWriter("users.txt");
+            FileWriter myObj = new FileWriter( "C:\\Users\\brend\\IdeaProjects\\Final-Project-Brendan-Peter-Micah\\src\\main\\resources\\users.txt");
 
             for (TextField i : textFields){
-                bufWrite.write(i.getText());
+                myObj.write(i.getText());
                 System.out.println("print");
             }
-            bufWrite.write("-");
+            myObj.write("-");
 
         } catch (IOException e) {
             e.printStackTrace();
-            fw.close();
-        } finally {
-            fw.close();
         }
     }
 
