@@ -152,7 +152,7 @@ public class HelloApplication extends Application {
         Button submitCharacterAlignment = new Button("submit");
 
         HBox characterAlignmentSet = new HBox();
-        characterAlignmentSet.getChildren().addAll(inputLabelClass, inputClass, submitCharacterClass);
+        characterAlignmentSet.getChildren().addAll(inputLabelAlignment, inputAlignment, submitCharacterAlignment);
         Scene characterAlignmentScene = new Scene(characterAlignmentSet);
 
         // Generate or add Ability Scores
