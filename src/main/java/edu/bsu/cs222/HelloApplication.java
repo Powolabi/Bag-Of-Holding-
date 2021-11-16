@@ -7,7 +7,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -115,23 +117,18 @@ public class HelloApplication extends Application {
         Label inputLabel = new Label("Character Details");
         TextField input = new TextField();
         input.setPromptText("Character Name");
-        String characterName = input.getText();
 
         // Character Race
         TextField inputRace = new TextField();
         inputRace.setPromptText("Race");
-        String characterRace = input.getText();
 
         // Character Class
         TextField inputClass = new TextField();
         inputClass.setPromptText("Class");
-        String charClass = input.getText();
 
         // Alignment
         TextField inputAlignment = new TextField();
         inputAlignment.setPromptText("Alignment");
-        String characterAlignment = input.getText();
-
 
         // Generate or add Ability Scores
 
@@ -145,8 +142,6 @@ public class HelloApplication extends Application {
         characterNameSet.getChildren().addAll(inputLabel, input, inputRace, inputClass, inputAlignment, submitCharacterAlignment);
         Scene userCharacterScene = new Scene(characterNameSet);
 
-
-
         //oldSession.setOnAction(e -> stage.setScene());
         newSession.setOnAction(e -> stage.setScene(PD));
         dMaster.setOnAction(e -> stage.setScene(playerCountScene));
@@ -156,11 +151,32 @@ public class HelloApplication extends Application {
             stage.setScene(dmSetPC);
         });
         player.setOnAction(e -> stage.setScene(userCharacterScene));
+        submitCharacterAlignment.setOnAction(e -> {
+                writeNewUser(input, inputRace, inputClass, inputAlignment);
+                stage.setScene(userCharacterScene);
+        });
 
         // set stage
         stage.setTitle("New Session");
         stage.setScene(newSessionScene);
         stage.show();
+    }
+
+    public void writeNewUser(TextField... textFields) {
+        PrintWriter fw = null;
+        try {
+            fw = new PrintWriter("users.txt");
+            BufferedWriter bufWrite = new BufferedWriter(fw);
+
+            for (TextField i : textFields){
+                bufWrite.write(i.getText());
+            }
+            bufWrite.write("-");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            fw.close();
+        }
     }
 
     public int getInt(String test){
