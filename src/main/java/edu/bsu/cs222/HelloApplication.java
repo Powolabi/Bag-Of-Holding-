@@ -140,7 +140,10 @@ public class HelloApplication extends Application {
         done.setOnAction(e -> stage.setScene(dmSetPC));
         newSession.setOnAction(e -> stage.setScene(PD));
         dMaster.setOnAction(e -> stage.setScene(playerCountScene));
-        submitPlayerCount.setOnAction(e -> stage.setScene(dmSetPC));
+        submitPlayerCount.setOnAction(e -> {
+            writeNewPlayerCount(inputPCCount.getText());
+            stage.setScene(dmSetPC);
+        });
         player.setOnAction(e -> stage.setScene(userCharacterScene));
         submitCharacterAlignment.setOnAction(e -> {
                 //writeNewPlayerCharacter();
@@ -153,9 +156,13 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    public void getPlayerCharacter(){
+
+    }
+
     public void writeNewPlayerCharacter(Queue<characterDetails> qCharDetails) {
         try {
-            FileWriter myObj = new FileWriter( "C:\\Users\\brend\\IdeaProjects\\Final-Project-Brendan-Peter-Micah\\src\\main\\resources\\users.txt", true);
+            FileWriter myObj = new FileWriter( "src\\main\\resources\\characterDetails.txt", true);
 
             for (characterDetails c : qCharDetails) {
                 myObj.write(c.getName() + ".");
@@ -166,11 +173,31 @@ public class HelloApplication extends Application {
                 myObj.write(c.getHitPoints()+ ".");
                 myObj.write(c.getArmorClass()+ ".");
                 myObj.write(c.getLevel());
+                myObj.write("\n");
             }
             myObj.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void writeNewPlayerCount(String... count) {
+        try {
+            FileWriter myObj = new FileWriter( "src\\main\\resources\\users.txt", true);
+
+            for (String c : count) {
+                myObj.write(c);
+            }
+            myObj.write("\n");
+            myObj.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static int strToInt(){
+
+        return 0;
     }
 
     public static void main(String[] args) {
