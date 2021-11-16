@@ -1,7 +1,6 @@
 package edu.bsu.cs222;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -16,15 +15,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class HelloApplication extends Application {
     private static final Queue<characterDetails> characterInfo = new LinkedList<>();
     //private static final Queue<abilityScores> abilityScores = new LinkedList<>();
+    private static int hold;
     @Override
     public void start(Stage stage) throws IOException {
         AtomicInteger count = new AtomicInteger();
-        String characterName, playerCount;
-
-
-        //Main scene, describes the start menu
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene mainScene = new Scene(fxmlLoader.load());
 
         // New session scene
             // Set text field
@@ -51,8 +45,8 @@ public class HelloApplication extends Application {
 
         Label pcCount = new Label("How many Players are at the table?\n(DM not included)");
         TextField inputPCCount = new TextField();
-        playerCount = inputPCCount.getText();
         Button submitPlayerCount = new Button("submit");
+        String playerCount = inputPCCount.getText();
 
         HBox playerCnt = new HBox();
         playerCnt.getChildren().addAll(pcCount, inputPCCount, submitPlayerCount);
@@ -84,12 +78,19 @@ public class HelloApplication extends Application {
         TextField level = new TextField();
         level.setPromptText("Character Level");
 
-        Label numTimes = new Label("" + count + "/4 Player Characters");
+        Label numTimes = new Label("" + count + "/" + hold + " Player Characters");
         Button subm = new Button("Submit");
+        Button done = new Button("Done");
 
         VBox vbox = new VBox(10);
         vbox.getChildren().addAll(label, charName, race, characterClass, alignment, hitpoints, ac, speed, level, subm, numTimes);
         Scene dmSetPC = new Scene(vbox);
+
+        // Ability score Scene
+
+        VBox vBox = new VBox(10);
+        vBox.getChildren().addAll();
+        Scene abilScore = new Scene(vBox);
 
         subm.setOnAction( e -> { try{
                 characterInfo.add(new characterDetails(name.getText(), race.getText(), characterClass.getText(), alignment.getText(), Integer.parseInt(hitpoints.getText()), Integer.parseInt(ac.getText()), Integer.parseInt(speed.getText()), Integer.parseInt(level.getText())));
@@ -102,19 +103,21 @@ public class HelloApplication extends Application {
                 ac.clear();
                 speed.clear();
                 level.clear();
-                if(count.get() <= 4){
-                    count.addAndGet(1);
-                } else {
-                    count.set(0);
-                }
-            }
+                count.addAndGet(1);
+
+                stage.setScene(abilScore);
+        }
+        });
+
+        done.setOnAction(e -> {
+            //stage.setScene();
         });
 
         // if PC -> input character name
         Label inputLabel = new Label("What is your characters name?");
         TextField input = new TextField();
         input.setPromptText("Enter Character Name");
-        characterName = input.getText();
+        String characterName = input.getText();
         Button submitCharacterName = new Button("submit");
 
         HBox characterNameSet = new HBox();
@@ -130,7 +133,11 @@ public class HelloApplication extends Application {
 
         // button-on-click scene switch tree for New Campaign
         dMaster.setOnAction(e -> stage.setScene(playerCountScene));
-        submitPlayerCount.setOnAction(e -> stage.setScene(dmSetPC));
+        submitPlayerCount.setOnAction(e -> {
+            hold = getInt(inputPCCount.getText().trim());
+            System.out.println(hold);
+            stage.setScene(dmSetPC);
+        });
 
         // button-on-click scene switch tree for New Player Character
         submitPOrD.setOnAction(e -> stage.setScene(characterNameScene));
@@ -140,6 +147,14 @@ public class HelloApplication extends Application {
         stage.setTitle("New Session");
         stage.setScene(newSessionScene);
         stage.show();
+    }
+
+    public int getInt(String test){
+        try{
+            return Integer.parseInt(test.trim());
+        }catch(Exception e){
+            return 0;
+        }
     }
 
     public static void main(String[] args) {
