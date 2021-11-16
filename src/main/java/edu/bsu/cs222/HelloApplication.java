@@ -6,8 +6,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -30,7 +28,6 @@ public class HelloApplication extends Application {
         layoutNewSession.getChildren().addAll(oldSession, newSession);
         Scene newSessionScene = new Scene(layoutNewSession);
 
-
         // Player or dm?
         Label name = new Label("Are you a Player (PC) or Dungeon Master");
         Button player = new Button("Player Character");
@@ -45,7 +42,6 @@ public class HelloApplication extends Application {
         Label pcCount = new Label("How many Players are at the table?\n(DM not included)");
         TextField inputPCCount = new TextField();
         Button submitPlayerCount = new Button("submit");
-        String playerCount = inputPCCount.getText();
 
         HBox playerCnt = new HBox();
         playerCnt.getChildren().addAll(pcCount, inputPCCount, submitPlayerCount);
