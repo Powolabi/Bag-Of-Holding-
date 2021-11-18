@@ -30,6 +30,9 @@ public class HelloApplication extends Application {
         comboBox.getItems().add("Character");
         comboBox.getItems().add("Campaign");
 
+        ToolBar toolBar = new ToolBar();
+
+        toolBar.getItems().addAll(comboBox, newSesh, select);
         // list of sessions
         ListView<String> list = new ListView<String>();
         ObservableList<String> fileNames = FXCollections.observableArrayList(
@@ -55,7 +58,7 @@ public class HelloApplication extends Application {
 
         VBox layout = new VBox(10);
         Scene scene = new Scene(layout);
-        layout.getChildren().addAll(comboBox, newSesh, list, select);
+        layout.getChildren().addAll(toolBar, list);
         stage.setScene(scene);
         stage.show();
     }

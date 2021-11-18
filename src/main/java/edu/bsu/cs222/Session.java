@@ -20,7 +20,20 @@ public class Session {
 
     }
 
+    static Stage stage = new Stage();
+
     public static String display(String sesh){
+        stage.setTitle("Bag of Holding");
+
+        TextField characterName;
+
+
+
+        VBox layout = new VBox(10);
+        Scene scene = new Scene(layout);
+        layout.getChildren().addAll();
+        stage.setScene(scene);
+        stage.show();
         return "";
     }
 }
