@@ -34,31 +34,37 @@ public class HelloApplication extends Application {
 
         toolBar.getItems().addAll(comboBox, newSesh, select);
         // list of sessions
-        ListView<String> list = new ListView<String>();
+        ListView<String> list = new ListView<>();
         ObservableList<String> fileNames = FXCollections.observableArrayList(
                 "a","b","c","d","e","f"
         );
 
         list.setItems(fileNames);
 
-        newSesh.setOnAction(e -> Session.display((String) comboBox.getValue()));
-        select.setOnAction(e -> {
-            if(comboBox.getButtonCell().isEmpty()){
-                listItem = list.getSelectionModel().getSelectedItem();
-                fileName = Session.display(listItem);
-                fileNames.add(fileName);
-            } else if (comboBox.getValue().equals("Character")){
+        newSesh.setOnAction(e -> {
+            Object character = "Character";
+            Object campaign = "Campaign";
+            if(comboBox.getValue() == null){
+
+            }else if (comboBox.getValue().equals(character)){
                 //stage.setScene();
-            } else if (comboBox.getValue().equals("Campaign")) {
+            } else if (comboBox.getValue().equals(campaign)) {
                 //stage.setScene();
             }
-             // no selection
 
+            Session.display((String) comboBox.getValue());
+        });
+        select.setOnAction(e -> {
+                listItem = list.getSelectionModel().getSelectedItem();
+                fileName = Session.display(listItem);
+                //System.out.println(fileName);
+                fileNames.add(fileName);
         });
 
         VBox layout = new VBox(10);
+        layout.setLayoutY(list.getLayoutY());
         Scene scene = new Scene(layout);
-        layout.getChildren().addAll(toolBar, list);
+        layout.getChildren().addAll(list, toolBar);
         stage.setScene(scene);
         stage.show();
     }
