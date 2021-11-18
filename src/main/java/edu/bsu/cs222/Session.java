@@ -23,6 +23,7 @@ public class Session {
     static Stage stage = new Stage();
 
     public static String display(String sesh){
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Bag of Holding");
 
         TextField characterName;

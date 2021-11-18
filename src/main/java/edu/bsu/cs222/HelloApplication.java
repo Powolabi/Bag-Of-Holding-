@@ -15,8 +15,6 @@ public class HelloApplication extends Application {
     public static final Queue<characterDetails> characterInfo = new LinkedList<>();
     //private static final Queue<abilityScores> abilityScores = new LinkedList<>();
     Stage window;
-    static String listItem;
-    static String fileName;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -35,9 +33,7 @@ public class HelloApplication extends Application {
         toolBar.getItems().addAll(comboBox, newSesh, select);
         // list of sessions
         ListView<String> list = new ListView<>();
-        ObservableList<String> fileNames = FXCollections.observableArrayList(
-                "a","b","c","d","e","f"
-        );
+        ObservableList<String> fileNames = FXCollections.observableArrayList();
 
         list.setItems(fileNames);
 
@@ -47,23 +43,20 @@ public class HelloApplication extends Application {
             if(comboBox.getValue() == null){
                 errorResponse.NoValueFound();
             }else if (comboBox.getValue().equals(character)){
-
-                //stage.setScene();
+                CharacterGUI.gui();
             } else if (comboBox.getValue().equals(campaign)) {
-                //stage.setScene();
+                CampaignGUI.gui();
             }
         });
         select.setOnAction(e -> {
-                listItem = list.getSelectionModel().getSelectedItem();
-                fileName = Session.display(listItem);
-                //System.out.println(fileName);
-                fileNames.add(fileName);
+
         });
 
         VBox layout = new VBox(10);
         layout.setLayoutY(list.getLayoutY());
         Scene scene = new Scene(layout);
         layout.getChildren().addAll(list, toolBar);
+        stage.setHeight(250);
         stage.setScene(scene);
         stage.show();
     }
