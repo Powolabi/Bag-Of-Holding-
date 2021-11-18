@@ -45,14 +45,13 @@ public class HelloApplication extends Application {
             Object character = "Character";
             Object campaign = "Campaign";
             if(comboBox.getValue() == null){
-
+                errorResponse.NoValueFound();
             }else if (comboBox.getValue().equals(character)){
+
                 //stage.setScene();
             } else if (comboBox.getValue().equals(campaign)) {
                 //stage.setScene();
             }
-
-            Session.display((String) comboBox.getValue());
         });
         select.setOnAction(e -> {
                 listItem = list.getSelectionModel().getSelectedItem();
