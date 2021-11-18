@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.embed.swing.*?>
-<?import javafx.geometry.*?>
+<?xml-stylesheet href="stylesheet.css"?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.stage.*?>
 
-<VBox alignment="CENTER" prefHeight="76.0" prefWidth="236.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-
-    <Label fx:id="welcomeText" />
-    <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
-        <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-        </items>
-    </SplitPane>
-    <Button onAction="#onHelloButtonClick" text="press me" />
-   <SwingNode />
-</VBox>
+<Stage xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <scene>
+        <Scene>
+            <AnchorPane prefHeight="200" prefWidth="200">
+            <children>
+               <ToolBar prefHeight="40.0" prefWidth="200.0">
+                 <items>
+                   <Button mnemonicParsing="false" text="Button" />
+                 </items>
+               </ToolBar>
+            </children></AnchorPane>
+        </Scene>
+    </scene>
+</Stage>

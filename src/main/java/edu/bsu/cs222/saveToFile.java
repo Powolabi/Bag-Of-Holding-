@@ -3,49 +3,59 @@ package edu.bsu.cs222;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Queue;
 
 public class saveToFile {
 
-    public static void saveXtoY(String x, String y){
+    public String parseFileFor(){
 
+        return "";
+    }
+
+    public void writeSessionName(String name){
         try{
-            FileWriter myObj = new FileWriter( "C:\\Users\\brend\\IdeaProjects\\Final-Project-Brendan-Peter-Micah\\src\\main\\resources\\" + y + ".txt");
-            myObj.write(x);
-        } catch(IOException e){
+            FileWriter myObj = new FileWriter("src\\main\\resources\\SessionName.txt", true);
+
+            myObj.write(name);
+            myObj.write("\n");
+
+        } catch (IOException e){
             e.printStackTrace();
         }
-
     }
-    // break data, aka items, spells, and character information in to its individual parts,
-    // Convert them to string type, tie all like information.
-    // if its a new item or larger piece of data, create a new line.
-    public static void parseData(String toStore){
-        switch (toStore) {
-            case "Item" -> saveTypeItem();
-            case "Class" -> saveTypeClass();
-            case "Spell" -> saveTypeSpell();
-            case "Race" -> saveTypeRace();
-            case "Character" -> saveTypeCharacter();
-            default -> saveTypeNotes();
+
+    public void writeNewPlayerCharacter(Queue<characterDetails> qCharDetails) {
+        try {
+            FileWriter myObj = new FileWriter( "src\\main\\resources\\characterDetails.txt", true);
+
+            for (characterDetails c : qCharDetails) {
+                myObj.write(c.getName() + ".");
+                myObj.write(c.getRace()+ ".");
+                myObj.write(c.getCharacterClass()+ ".");
+                myObj.write(c.getArmorClass()+ ".");
+                myObj.write(c.getAlignment()+ ".");
+                myObj.write(c.getHitPoints()+ ".");
+                myObj.write(c.getArmorClass()+ ".");
+                myObj.write(c.getLevel());
+                myObj.write("\n");
+            }
+            myObj.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
     }
 
-    private static void saveTypeNotes() {
-    }
+    public void writeNewPlayerCount(String... count) {
+        try {
+            FileWriter myObj = new FileWriter( "src\\main\\resources\\users.txt", true);
 
-    private static void saveTypeCharacter() {
-    }
-
-    private static void saveTypeRace() {
-    }
-
-    private static void saveTypeSpell() {
-    }
-
-    private static void saveTypeClass() {
-    }
-
-    private static void saveTypeItem() {
+            for (String c : count) {
+                myObj.write(c);
+            }
+            myObj.write("\n");
+            myObj.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
