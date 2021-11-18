@@ -3,9 +3,13 @@ package edu.bsu.cs222;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -15,7 +19,7 @@ public class HelloApplication extends Application {
     public static final Queue<characterDetails> characterInfo = new LinkedList<>();
     //private static final Queue<abilityScores> abilityScores = new LinkedList<>();
     Stage window;
-
+    static String holdInt;
     @Override
     public void start(Stage stage) throws IOException {
         window = stage;
@@ -45,7 +49,25 @@ public class HelloApplication extends Application {
             }else if (comboBox.getValue().equals(character)){
                 CharacterGUI.gui();
             } else if (comboBox.getValue().equals(campaign)) {
-                CampaignGUI.gui();
+                final Stage dialog = new Stage();
+                dialog.initModality(Modality.APPLICATION_MODAL);
+                dialog.initOwner(window);
+
+                TextField number_of_players = new TextField();
+                number_of_players.setPromptText("Number Of Players");
+                Button submit = new Button("Enter");
+                submit.setOnAction(e1 -> {
+                    holdInt = number_of_players.getText();
+                    CampaignGUI.numPlayers(holdInt);
+                    dialog.close();
+                });
+                ToolBar tools = new ToolBar(number_of_players, submit);
+
+                VBox dialogVbox = new VBox(20);
+                dialogVbox.getChildren().add(tools);
+                Scene dialogScene = new Scene(dialogVbox, 300, 200);
+                dialog.setScene(dialogScene);
+                dialog.show();
             }
         });
         select.setOnAction(e -> {
