@@ -71,7 +71,7 @@ public class HelloApplication extends Application {
             }
         });
         select.setOnAction(e -> {
-
+            list.getSelectionModel().getSelectedItem();
         });
 
         VBox layout = new VBox(10);
