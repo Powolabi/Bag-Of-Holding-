@@ -9,6 +9,12 @@ public class characterDetails {
     public static String armorClass;
     public static String speed;
     public static String level;
+    public static int Strength;
+    public static int Dexterity;
+    public static int Constitution;
+    public static int Intelligence;
+    public static int Wisdom;
+    public static int Charisma;
 
     public characterDetails(String text, String text1, String text2, String text3, String parseInt, String parseInt1, String parseInt2, String parseInt3) {
         characterDetails.name = text;
@@ -59,5 +65,51 @@ public class characterDetails {
     public String getLevel()
     {
         return level;
+    }
+
+    public static void setStrength(int strength) {
+        Strength = strength;
+    }
+
+    public static void setDexterity(int dexterity) {
+        Dexterity = dexterity;
+    }
+
+    public static void setConstitution(int constitution) {
+        Constitution = constitution;
+    }
+
+    public static void setIntelligence(int intelligence) {
+        Intelligence = intelligence;
+    }
+
+    public static void setWisdom(int wisdom) { Wisdom = wisdom; }
+
+    public static void setCharisma(int charisma) {
+        Charisma = charisma;
+    }
+
+    public static int getStrength() {
+        return Strength;
+    }
+
+    public static int getDexterity() {
+        return Dexterity;
+    }
+
+    public static int getConstitution() {
+        return Constitution;
+    }
+
+    public static int getIntelligence() {
+        return Intelligence;
+    }
+
+    public static int getWisdom() {
+        return Wisdom;
+    }
+
+    public static int getCharisma() {
+        return Charisma;
     }
 }

@@ -34,25 +34,25 @@ public class abilityScoreModifier {
         return number;
     }
 
-    public static void setStrMod(int strMod) { strMod = modifierIndex(abilityScores.getStrength()); }
+    public static void setStrMod(int strMod) { strMod = modifierIndex(characterDetails.getStrength()); }
 
     public static void setDexMod(int dexMod) {
-        dexMod = modifierIndex(abilityScores.getDexterity());
+        dexMod = modifierIndex(characterDetails.getDexterity());
     }
 
     public static void setConMod(int conMod) {
-        conMod = modifierIndex(abilityScores.getConstitution());
+        conMod = modifierIndex(characterDetails.getConstitution());
     }
 
     public static void setIntMod(int intMod) {
-        intMod = modifierIndex(abilityScores.getIntelligence());
+        intMod = modifierIndex(characterDetails.getIntelligence());
     }
 
     public static void setWisMod(int wisMod) {
-        wisMod = modifierIndex(abilityScores.getWisdom());
+        wisMod = modifierIndex(characterDetails.getWisdom());
     }
 
-    public static void setCharMod(int charMod) { charMod = modifierIndex(abilityScores.getCharisma()); }
+    public static void setCharMod(int charMod) { charMod = modifierIndex(characterDetails.getCharisma()); }
 
     public static int getStrMod() {
         return strMod;

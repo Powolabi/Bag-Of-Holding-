@@ -47,7 +47,11 @@ public class HelloApplication extends Application {
             if(comboBox.getValue() == null){
                 errorResponse.NoValueFound();
             }else if (comboBox.getValue().equals(character)){
-                CharacterGUI.gui();
+                try {
+                    CharacterGUI.mainUI();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             } else if (comboBox.getValue().equals(campaign)) {
                 final Stage dialog = new Stage();
                 dialog.initModality(Modality.APPLICATION_MODAL);
@@ -81,6 +85,10 @@ public class HelloApplication extends Application {
         stage.setHeight(250);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void sendStartDataToMainGUI(){
+
     }
 
     public static void main(String[] args) {

@@ -2,4 +2,112 @@ package edu.bsu.cs222;
 
 public class main {
 
+    String character = "character";
+    String campaign = "campaign";
+
+    private void commmandline(){
+        System.out.println("Bag of Holding\n");
+
+        System.out.println(character + " or " + campaign + "\n");
+        String input = System.console().readLine();
+
+        int playerCount = numberOfPlayers(input);
+
+
+
+    }
+
+    private void createCharacter(int numPlayers){
+        String check;
+        for(int i = 0; i < numPlayers; i++){
+            System.out.println("Character Creation");
+
+            System.out.println("Enter your characters name: ");
+            characterDetails.name = System.console().readLine();
+
+            System.out.println("What level character are you making?: ");
+            characterDetails.level = System.console().readLine();
+
+            System.out.println("What is your characters class");
+            characterDetails.characterClass = System.console().readLine();
+
+            System.out.println("what is your characters race");
+            characterDetails.race = System.console().readLine();
+
+            System.out.println("What is your alignment");
+            characterDetails.alignment = System.console().readLine();
+
+            System.out.println("Don't have dice? Want us to roll your stats for you? you just organize them");
+            System.out.println("y/n");
+            check = System.console().readLine();
+            if(check == "y"){
+                int[] score = new int[6];
+                for(int j = 0; i < 6; i++){
+                    score[j] = randomRoll.generateAbilityScore();
+                }
+                System.out.println(score);
+            }
+
+            System.out.println("input your Roll for Strength");
+            characterDetails.setStrength(stringToNumb(System.console().readLine()));
+
+            System.out.println("input your Roll for Dexterity");
+            characterDetails.setDexterity(stringToNumb(System.console().readLine()));
+
+            System.out.println("input your Roll for Constitution");
+            characterDetails.setConstitution(stringToNumb(System.console().readLine()));
+
+            System.out.println("input your Roll for Intelligence");
+            characterDetails.setIntelligence(stringToNumb(System.console().readLine()));
+
+            System.out.println("input your Roll for Charisma");
+            characterDetails.setCharisma(stringToNumb(System.console().readLine()));
+
+            System.out.println("input your Roll for Wisdom");
+            characterDetails.setWisdom(stringToNumb(System.console().readLine()));
+
+        }
+    }
+
+    private int numberOfPlayers(String x){
+        int numPlayer;
+        if(x.equals(campaign)){
+            System.out.println("Enter the number of players (1 - 10)");
+            String numPlayerStr = System.console().readLine();
+            return stringToNumb(numPlayerStr);
+        } else {
+            numPlayer = 1;
+        }
+        return numPlayer;
+    }
+
+    private int stringToNumb(String str){
+        int x = switch (str) {
+            case "1" -> 1;
+            case "2" -> 2;
+            case "3" -> 3;
+            case "4" -> 4;
+            case "5" -> 5;
+            case "6" -> 6;
+            case "7" -> 7;
+            case "8" -> 8;
+            case "9" -> 9;
+            case "10" -> 10;
+            case "11" -> 11;
+            case "12" -> 12;
+            case "13" -> 13;
+            case "14" -> 14;
+            case "15" -> 15;
+            case "16" -> 16;
+            case "17" -> 17;
+            case "18" -> 18;
+            case "19" -> 19;
+            case "20" -> 20;
+            default -> 0;
+        };
+
+        return x;
+    }
+
+
 }

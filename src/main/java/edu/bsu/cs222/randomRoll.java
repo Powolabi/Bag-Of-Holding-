@@ -33,4 +33,21 @@ public class randomRoll {
         Random rand = new Random();
         return rand.nextInt(20) + 1;
     }
+
+    public static int generateAbilityScore(){
+        int[] score = new int[4];
+        int num = 6;
+        int value = 0;
+
+        for(int i = 0; i < 4; i++){
+            score[i] = rollOfSix();
+            if (i < num){
+                num = i;
+            }
+        }
+        for (int j : score) {
+            value += j;
+        }
+        return value-num;
+    }
 }

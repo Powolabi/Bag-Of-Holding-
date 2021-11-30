@@ -7,16 +7,32 @@
 <?import javafx.stage.*?>
 
 <Stage xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
-    <scene>
-        <Scene>
-            <AnchorPane prefHeight="200" prefWidth="200">
+   <scene>
+      <Scene>
+          <AnchorPane prefHeight="600.0" prefWidth="500.0">
             <children>
-               <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <SplitPane dividerPositions="0.2508361204013378" orientation="VERTICAL" prefHeight="600.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                  <items>
-                   <Button mnemonicParsing="false" text="Button" />
+                   <AnchorPane maxHeight="250.0" maxWidth="500.0" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="500.0">
+                        <children>
+                           <ScrollPane layoutY="3.0" prefHeight="143.0" prefWidth="497.0">
+                              <content>
+                                 <ListView orientation="HORIZONTAL" prefHeight="125.0" prefWidth="500.0" />
+                              </content></ScrollPane>
+                        </children>
+                     </AnchorPane>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="308.0" prefWidth="500.0">
+                        <children>
+                           <ButtonBar layoutX="-1.0" layoutY="416.0" prefHeight="30.0" prefWidth="499.0">
+                             <buttons>
+                               <Button mnemonicParsing="false" prefHeight="15.0" text="Button" />
+                             </buttons>
+                           </ButtonBar>
+                        </children>
+                     </AnchorPane>
                  </items>
-               </ToolBar>
+               </SplitPane>
             </children></AnchorPane>
-        </Scene>
-    </scene>
+      </Scene>
+   </scene>
 </Stage>
