@@ -39,32 +39,34 @@ public class main {
 
             System.out.println("Don't have dice? Want us to roll your stats for you? you just organize them");
             System.out.println("y/n");
+
             check = System.console().readLine();
+
             if(check == "y"){
                 int[] score = new int[6];
                 for(int j = 0; i < 6; i++){
                     score[j] = randomRoll.generateAbilityScore();
                 }
                 System.out.println(score);
+            } else {
+                System.out.println("input your Roll for Strength");
+                characterDetails.setStrength(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Dexterity");
+                characterDetails.setDexterity(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Constitution");
+                characterDetails.setConstitution(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Intelligence");
+                characterDetails.setIntelligence(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Charisma");
+                characterDetails.setCharisma(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Wisdom");
+                characterDetails.setWisdom(stringToNumb(System.console().readLine()));
             }
-
-            System.out.println("input your Roll for Strength");
-            characterDetails.setStrength(stringToNumb(System.console().readLine()));
-
-            System.out.println("input your Roll for Dexterity");
-            characterDetails.setDexterity(stringToNumb(System.console().readLine()));
-
-            System.out.println("input your Roll for Constitution");
-            characterDetails.setConstitution(stringToNumb(System.console().readLine()));
-
-            System.out.println("input your Roll for Intelligence");
-            characterDetails.setIntelligence(stringToNumb(System.console().readLine()));
-
-            System.out.println("input your Roll for Charisma");
-            characterDetails.setCharisma(stringToNumb(System.console().readLine()));
-
-            System.out.println("input your Roll for Wisdom");
-            characterDetails.setWisdom(stringToNumb(System.console().readLine()));
 
         }
     }
