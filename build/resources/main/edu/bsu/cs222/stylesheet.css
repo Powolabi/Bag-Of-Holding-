@@ -1,0 +1,14 @@
+.Stage {
+    -fx-background-image: url("Goodbye.jpg");
+    -fx-background-color:transparent;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+.button1 {
+    -fx-text-fill: white;
+    -fx-text-align: center;
+    -fx-background-color: #FF5935;
+    -fx-shape: polygon(25% 0%, 75% 0%, 100% 51%, 75% 100%, 25% 100%, 0% 50%);
+}
