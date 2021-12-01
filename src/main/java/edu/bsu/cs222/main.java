@@ -48,6 +48,8 @@ public class main {
                     score[j] = randomRoll.generateAbilityScore();
                 }
                 System.out.println(score);
+
+
             } else {
                 System.out.println("input your Roll for Strength");
                 characterDetails.setStrength(stringToNumb(System.console().readLine()));
