@@ -49,6 +49,25 @@ public class main {
                 }
                 System.out.println(score);
 
+                System.out.println("Input the stats in the order you'd like");
+
+                System.out.println("input your Roll for Strength");
+                characterDetails.setStrength(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Dexterity");
+                characterDetails.setDexterity(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Constitution");
+                characterDetails.setConstitution(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Intelligence");
+                characterDetails.setIntelligence(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Charisma");
+                characterDetails.setCharisma(stringToNumb(System.console().readLine()));
+
+                System.out.println("input your Roll for Wisdom");
+                characterDetails.setWisdom(stringToNumb(System.console().readLine()));
 
             } else {
                 System.out.println("input your Roll for Strength");
