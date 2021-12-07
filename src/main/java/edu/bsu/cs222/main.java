@@ -13,7 +13,7 @@ public class main {
 
         int playerCount = numberOfPlayers(input);
 
-
+        createCharacter(playerCount);
 
     }
 

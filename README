@@ -1,0 +1,19 @@
+Bag of Holding
+
+//////////////
+
+User stories
+------------
+As a Dungeons and dragons player I can create and save a character sheet.
+    - I can add character details; Name, race, class, and overall stats
+    - I can store and edit those details
+
+As a Dungeon Master I can create and store multiple player characters.
+    -
+
+As a Dungeons and dragons player I can add spells and items.
+    -
+
+//////////////
+
+add 0.3.0 to tag
