@@ -27,11 +27,9 @@ public class main {
 
     public static void createCharacter(int numPlayers){
         Scanner input = new Scanner(System.in);
-        String name;
-        String race;
-        String align;
-        String level;
-        String charClass;
+        String name, race, align, level, charClass, armorClass, hitPoints, check;
+        String str, dex, con, intel, charis, wis;
+
         for(int i = 0; i < numPlayers; i++){
             System.out.println("Character Creation\n");
 
@@ -50,13 +48,15 @@ public class main {
             System.out.println("Enter your character's alignment:");
             align = input.nextLine();
 
-            characterDetails details = new characterDetails(name, race, charClass, align, level);
-            saveToFile.writeNewPlayerCharacter(details);
+            System.out.println("Enter your character's alignment:");
+            armorClass = input.nextLine();
 
-            /*System.out.println("Don't have dice? Want us to roll your stats for you? you just organize them");
+            System.out.println("Enter your character's alignment:");
+            hitPoints = input.nextLine();
+
+            System.out.println("Don't have dice? Want us to roll your stats for you? you just organize them");
             System.out.println("y/n");
-
-            check = System.console().readLine();
+            check = input.nextLine();
 
             if(check == "y"){
                 int[] score = new int[6];
@@ -68,43 +68,44 @@ public class main {
                 System.out.println("Input the stats in the order you'd like");
 
                 System.out.println("input your Roll for Strength");
-                characterDetails.setStrength(stringToNumb(System.console().readLine()));
+                str = input.nextLine();
 
                 System.out.println("input your Roll for Dexterity");
-                characterDetails.setDexterity(stringToNumb(System.console().readLine()));
+                dex = input.nextLine();
 
                 System.out.println("input your Roll for Constitution");
-                characterDetails.setConstitution(stringToNumb(System.console().readLine()));
+                con = input.nextLine();
 
                 System.out.println("input your Roll for Intelligence");
-                characterDetails.setIntelligence(stringToNumb(System.console().readLine()));
+                intel = input.nextLine();
 
                 System.out.println("input your Roll for Charisma");
-                characterDetails.setCharisma(stringToNumb(System.console().readLine()));
+                charis = input.nextLine();
 
                 System.out.println("input your Roll for Wisdom");
-                characterDetails.setWisdom(stringToNumb(System.console().readLine()));
+                wis = input.nextLine();
 
             } else {
                 System.out.println("input your Roll for Strength");
-                characterDetails.setStrength(stringToNumb(System.console().readLine()));
+                str = input.nextLine();
 
                 System.out.println("input your Roll for Dexterity");
-                characterDetails.setDexterity(stringToNumb(System.console().readLine()));
+                dex = input.nextLine();
 
                 System.out.println("input your Roll for Constitution");
-                characterDetails.setConstitution(stringToNumb(System.console().readLine()));
+                con = input.nextLine();
 
                 System.out.println("input your Roll for Intelligence");
-                characterDetails.setIntelligence(stringToNumb(System.console().readLine()));
+                intel = input.nextLine();
 
                 System.out.println("input your Roll for Charisma");
-                characterDetails.setCharisma(stringToNumb(System.console().readLine()));
+                charis = input.nextLine();
 
                 System.out.println("input your Roll for Wisdom");
-                characterDetails.setWisdom(stringToNumb(System.console().readLine()));
-            }**/
-
+                wis = input.nextLine();
+            }
+            characterDetails details = new characterDetails(name, race, charClass, align, level, armorClass, hitPoints, str, dex, con, intel, charis, wis);
+            saveToFile.writeNewPlayerCharacter(details);
         }
     }
 
@@ -120,7 +121,7 @@ public class main {
         return numPlayer;
     }
 
-    private int stringToNumb(String str){
+    public static int stringToNumb(String str){
         int x = switch (str) {
             case "1" -> 1;
             case "2" -> 2;
@@ -142,6 +143,16 @@ public class main {
             case "18" -> 18;
             case "19" -> 19;
             case "20" -> 20;
+            case "21" -> 21;
+            case "22" -> 22;
+            case "23" -> 23;
+            case "24" -> 24;
+            case "25" -> 25;
+            case "26" -> 26;
+            case "27" -> 27;
+            case "28" -> 28;
+            case "29" -> 29;
+            case "30" -> 30;
             default -> 0;
         };
 

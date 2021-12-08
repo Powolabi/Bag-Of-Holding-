@@ -27,13 +27,10 @@ public class saveToFile {
     public static void writeNewPlayerCharacter(characterDetails details) {
         try {
             FileWriter myObj = new FileWriter( "src\\main\\resources\\characterDetails.txt", true);
-            myObj.write("name: " + details.getName() + ".");
-            myObj.write("race: " + details.getRace() + ".");
-            myObj.write("class: " + details.getCharacterClass() + ".");
-                //myObj.write("armor: " + c.getArmorClass()+ ".");
-            myObj.write("align: " + details.getAlignment() + ".");
-                //myObj.write("hp: " + c.getHitPoints()+ ".");
-            myObj.write("level: " + details.getLevel());
+
+            myObj.write(details.getName() + "." + details.getRace() + "." + details.getCharacterClass() + "." + details.getAlignment() + "." + details.getLevel() + "." + details.getHitPoints() + "." + details.getArmorClass() + ".");
+            myObj.write( details.getStrength() + "." + details.getDexterity() + "." + details.getConstitution() + "." + details.getIntelligence() + "." + details.getCharisma() + "." + details.getWisdom());
+            // NAME.RACE.CLASS.ALIGNMENT.LEVEL.HITPOINTS.ARMORCLASS.STR.DEX.CON.INT.CHAR.WIS
             myObj.write("\n");
             myObj.close();
         } catch (IOException e) {
@@ -44,7 +41,6 @@ public class saveToFile {
     public void writeNewPlayerCount(String... count) {
         try {
             FileWriter myObj = new FileWriter( "src\\main\\resources\\users.txt", true);
-
             for (String c : count) {
                 myObj.write(c);
             }
