@@ -9,6 +9,7 @@ module edu.bsu.cs {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires javafx.graphics;
 
     opens edu.bsu.cs222 to javafx.fxml;
     exports edu.bsu.cs222;

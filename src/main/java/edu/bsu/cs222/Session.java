@@ -21,6 +21,7 @@ public class Session {
     }
 
     static Stage stage = new Stage();
+    main main = new main();
 
     public static String display(String sesh){
         stage.initModality(Modality.APPLICATION_MODAL);

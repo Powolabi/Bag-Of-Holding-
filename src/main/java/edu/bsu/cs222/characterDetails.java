@@ -16,14 +16,11 @@ public class characterDetails {
     public static int Wisdom;
     public static int Charisma;
 
-    public characterDetails(String text, String text1, String text2, String text3, String parseInt, String parseInt1, String parseInt2, String parseInt3) {
+    public characterDetails(String text, String text1, String text2, String text3, String parseInt3) {
         characterDetails.name = text;
         characterDetails.race = text1;
         characterDetails.characterClass = text2;
         characterDetails.alignment = text3;
-        characterDetails.hitPoints = parseInt;
-        characterDetails.armorClass = parseInt1;
-        characterDetails.speed = parseInt2;
         characterDetails.level = parseInt3;
     }
 
@@ -45,21 +42,6 @@ public class characterDetails {
     public String getCharacterClass()
     {
         return characterClass;
-    }
-
-    public String getHitPoints()
-    {
-        return hitPoints;
-    }
-
-    public String getArmorClass()
-    {
-        return armorClass;
-    }
-
-    public String getSpeed()
-    {
-        return speed;
     }
 
     public String getLevel()

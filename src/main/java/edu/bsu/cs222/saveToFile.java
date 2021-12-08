@@ -24,21 +24,17 @@ public class saveToFile {
         }
     }
 
-    public void writeNewPlayerCharacter(Queue<characterDetails> qCharDetails) {
+    public static void writeNewPlayerCharacter(characterDetails details) {
         try {
             FileWriter myObj = new FileWriter( "src\\main\\resources\\characterDetails.txt", true);
-
-            for (characterDetails c : qCharDetails) {
-                myObj.write(c.getName() + ".");
-                myObj.write(c.getRace()+ ".");
-                myObj.write(c.getCharacterClass()+ ".");
-                myObj.write(c.getArmorClass()+ ".");
-                myObj.write(c.getAlignment()+ ".");
-                myObj.write(c.getHitPoints()+ ".");
-                myObj.write(c.getArmorClass()+ ".");
-                myObj.write(c.getLevel());
-                myObj.write("\n");
-            }
+            myObj.write("name: " + details.getName() + ".");
+            myObj.write("race: " + details.getRace() + ".");
+            myObj.write("class: " + details.getCharacterClass() + ".");
+                //myObj.write("armor: " + c.getArmorClass()+ ".");
+            myObj.write("align: " + details.getAlignment() + ".");
+                //myObj.write("hp: " + c.getHitPoints()+ ".");
+            myObj.write("level: " + details.getLevel());
+            myObj.write("\n");
             myObj.close();
         } catch (IOException e) {
             e.printStackTrace();

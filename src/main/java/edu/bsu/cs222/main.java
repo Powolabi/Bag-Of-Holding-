@@ -1,43 +1,59 @@
 package edu.bsu.cs222;
 
+import java.util.Scanner;
+
+import static edu.bsu.cs222.saveToFile.*;
+
 public class main {
 
     String character = "character";
     String campaign = "campaign";
+
+    public static void main(String[] args){
+        createCharacter(1);
+    }
+
 
     private void commmandline(){
         System.out.println("Bag of Holding\n");
 
         System.out.println(character + " or " + campaign + "\n");
         String input = System.console().readLine();
-
         int playerCount = numberOfPlayers(input);
 
         createCharacter(playerCount);
 
     }
 
-    private void createCharacter(int numPlayers){
-        String check;
+    public static void createCharacter(int numPlayers){
+        Scanner input = new Scanner(System.in);
+        String name;
+        String race;
+        String align;
+        String level;
+        String charClass;
         for(int i = 0; i < numPlayers; i++){
-            System.out.println("Character Creation");
+            System.out.println("Character Creation\n");
 
-            System.out.println("Enter your characters name: ");
-            characterDetails.name = System.console().readLine();
+            System.out.println("Enter your character's name:");
+            name = input.nextLine();
 
-            System.out.println("What level character are you making?: ");
-            characterDetails.level = System.console().readLine();
+            System.out.println("Enter your character's level:");
+            level = input.nextLine();
 
-            System.out.println("What is your characters class");
-            characterDetails.characterClass = System.console().readLine();
+            System.out.println("Enter your character's class:");
+            charClass = input.nextLine();
 
-            System.out.println("what is your characters race");
-            characterDetails.race = System.console().readLine();
+            System.out.println("Enter your character's race:");
+            race = input.nextLine();
 
-            System.out.println("What is your alignment");
-            characterDetails.alignment = System.console().readLine();
+            System.out.println("Enter your character's alignment:");
+            align = input.nextLine();
 
-            System.out.println("Don't have dice? Want us to roll your stats for you? you just organize them");
+            characterDetails details = new characterDetails(name, race, charClass, align, level);
+            saveToFile.writeNewPlayerCharacter(details);
+
+            /*System.out.println("Don't have dice? Want us to roll your stats for you? you just organize them");
             System.out.println("y/n");
 
             check = System.console().readLine();
@@ -87,7 +103,7 @@ public class main {
 
                 System.out.println("input your Roll for Wisdom");
                 characterDetails.setWisdom(stringToNumb(System.console().readLine()));
-            }
+            }**/
 
         }
     }
