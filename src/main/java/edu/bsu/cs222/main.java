@@ -9,12 +9,7 @@ public class main {
     String character = "character";
     String campaign = "campaign";
 
-    public static void main(String[] args){
-        createCharacter(1);
-    }
-
-
-    private void commmandline(){
+    public void commandline(){
         System.out.println("Bag of Holding\n");
 
         System.out.println(character + " or " + campaign + "\n");
@@ -22,10 +17,9 @@ public class main {
         int playerCount = numberOfPlayers(input);
 
         createCharacter(playerCount);
-
     }
 
-    public static void createCharacter(int numPlayers){
+    public void createCharacter(int numPlayers){
         Scanner input = new Scanner(System.in);
         String name, race, align, level, charClass, armorClass, hitPoints, check;
         String str, dex, con, intel, charis, wis;
@@ -159,5 +153,8 @@ public class main {
         return x;
     }
 
+    public void main(String[] args){
+        commandline();
+    }
 
 }
