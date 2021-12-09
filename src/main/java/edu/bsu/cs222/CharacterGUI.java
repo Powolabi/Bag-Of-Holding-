@@ -9,7 +9,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/*
 public class CharacterGUI {
     static Stage stage = new Stage();
     protected static void mainUI() throws IOException {
@@ -25,3 +25,4 @@ public class CharacterGUI {
 
     }
 }
+*/

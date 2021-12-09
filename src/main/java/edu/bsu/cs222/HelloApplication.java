@@ -3,20 +3,14 @@ package edu.bsu.cs222;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.Queue;
-
+/*
 public class HelloApplication extends Application {
-    public static final Queue<characterDetails> characterInfo = new LinkedList<>();
     //private static final Queue<abilityScores> abilityScores = new LinkedList<>();
     Stage window;
     static String holdInt;
@@ -85,13 +79,12 @@ public class HelloApplication extends Application {
         stage.setHeight(250);
         stage.setScene(scene);
         stage.show();
-    }
 
-    public void sendStartDataToMainGUI(){
-
+        stage.setOnCloseRequest(e -> stage.close());
     }
 
     public static void main(String[] args) {
         launch();
     }
 }
+*/

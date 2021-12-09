@@ -1,25 +1,34 @@
 package edu.bsu.cs222;
 
+import java.util.Objects;
 import java.util.Scanner;
-
-import static edu.bsu.cs222.saveToFile.*;
 
 public class main {
 
-    String character = "character";
-    String campaign = "campaign";
+    static String character = "character";
+    static String campaign = "campaign";
 
-    public void commandline(){
+    public static void start(){
+        Scanner sc = new Scanner(System.in);
+        int playerCount;
         System.out.println("Bag of Holding\n");
 
         System.out.println(character + " or " + campaign + "\n");
-        String input = System.console().readLine();
-        int playerCount = numberOfPlayers(input);
+        String input = sc.nextLine();
 
-        createCharacter(playerCount);
+        if (Objects.equals(input, campaign)){
+            input = System.console().readLine();
+            playerCount = numberOfPlayers(input);
+            createCharacter(playerCount);
+        } else if (Objects.equals(input, character)){
+            createCharacter(1);
+        } else {
+            System.out.println("err: input incorrect");
+            start();
+        }
     }
 
-    public void createCharacter(int numPlayers){
+    public static void createCharacter(int numPlayers){
         Scanner input = new Scanner(System.in);
         String name, race, align, level, charClass, armorClass, hitPoints, check;
         String str, dex, con, intel, charis, wis;
@@ -52,12 +61,12 @@ public class main {
             System.out.println("y/n");
             check = input.nextLine();
 
-            if(check == "y"){
+            if(Objects.equals(check, "y")){
                 int[] score = new int[6];
                 for(int j = 0; i < 6; i++){
                     score[j] = randomRoll.generateAbilityScore();
                 }
-                System.out.println(score);
+                System.out.println("" + score);
 
                 System.out.println("Input the stats in the order you'd like");
 
@@ -103,7 +112,7 @@ public class main {
         }
     }
 
-    private int numberOfPlayers(String x){
+    private static int numberOfPlayers(String x){
         int numPlayer;
         if(x.equals(campaign)){
             System.out.println("Enter the number of players (1 - 10)");
@@ -116,7 +125,8 @@ public class main {
     }
 
     public static int stringToNumb(String str){
-        int x = switch (str) {
+
+        return switch (str) {
             case "1" -> 1;
             case "2" -> 2;
             case "3" -> 3;
@@ -149,12 +159,8 @@ public class main {
             case "30" -> 30;
             default -> 0;
         };
-
-        return x;
     }
-
-    public void main(String[] args){
-        commandline();
+    public static void main(String[] args) {
+        start();
     }
-
 }
