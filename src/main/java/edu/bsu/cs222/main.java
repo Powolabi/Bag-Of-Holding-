@@ -107,6 +107,7 @@ public class main {
         }
         characterDetails details = new characterDetails(name, race, charClass, align, level, armorClass, hitPoints, str, dex, con, intel, charis, wis);
         saveToFile.writeNewPlayerCharacter(details);
+        start();
     }
 
     public static void savedFiles(){
