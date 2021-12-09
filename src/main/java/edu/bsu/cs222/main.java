@@ -27,6 +27,21 @@ public class main {
             start();
         }
     }
+    // after character created
+    public static void commands(){
+        Scanner input = new Scanner(System.in);
+        String[] comm = input.nextLine().split(" ");
+        switch(comm[0]){
+            case "open":    // open  file
+                pullFromFile.getFileData(comm[1]);
+                break;
+            case "stats":{
+                pullFromFile.getFileData(comm[1]);
+            }
+            case "items":
+
+        }
+    }
 
     public static void createCharacter(){
         Scanner input = new Scanner(System.in);
@@ -120,6 +135,7 @@ public class main {
         for(int i = 0; i < listOfNames.length; i++){
             System.out.println(listOfNames[i].getName());
         }
+        commands();
     }
 
     public static int stringToNumb(String str){
