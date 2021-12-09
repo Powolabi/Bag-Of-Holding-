@@ -60,7 +60,7 @@ public class main {
 
         if(Objects.equals(check, "n")){
             int[] score = new int[6];
-            for(int j = 0; i < 6; i++){
+            for(int j = 0; j < 6; j++){
                 score[j] = randomRoll.generateAbilityScore();
                 System.out.println("" + score[j]);
             }
@@ -108,16 +108,8 @@ public class main {
         saveToFile.writeNewPlayerCharacter(details);
     }
 
-    private static int numberOfPlayers(String x){
-        int numPlayer;
-        if(x.equals(campaign)){
-            System.out.println("Enter the number of players (1 - 10)");
-            String numPlayerStr = System.console().readLine();
-            return stringToNumb(numPlayerStr);
-        } else {
-            numPlayer = 1;
-        }
-        return numPlayer;
+    public static void savedFiles(){
+
     }
 
     public static int stringToNumb(String str){
