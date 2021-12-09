@@ -3,7 +3,9 @@ package edu.bsu.cs222;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class saveToFile {
 

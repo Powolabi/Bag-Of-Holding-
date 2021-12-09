@@ -19,7 +19,7 @@ public class main {
         if (Objects.equals(input, newCharacter)){
             createCharacter();
         } else if (Objects.equals(input, savedCharacter)){
-
+            savedFiles();
         } else {
             System.out.println("err: input incorrect");
             start();
@@ -109,6 +109,7 @@ public class main {
     }
 
     public static void savedFiles(){
+        System.out.println("Characters: ");
 
     }
 
