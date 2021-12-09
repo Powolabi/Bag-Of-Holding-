@@ -57,7 +57,7 @@ public class main {
             System.out.println("Enter your character's hit points:");
             hitPoints = input.nextLine();
 
-            System.out.println("Don't have dice? Want us to roll your stats for you? you just organize them");
+            System.out.println("Want us to roll your stats for you? you just organize them");
             System.out.println("y/n");
             check = input.nextLine();
 
