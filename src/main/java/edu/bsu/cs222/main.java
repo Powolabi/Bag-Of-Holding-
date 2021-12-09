@@ -77,7 +77,9 @@ public class main {
                 case "skills": {
                     if(comm[1] == "set-proficiencies"){
 
-                    } else if (comm[1] == ""){
+                    } else if (comm[1] == "get-proficiencies"){
+
+                    } else {
 
                     }
                 }
