@@ -14,15 +14,16 @@ for version 0.3.0
 
 User stories
 ------------
-As a Dungeons and dragons player I can create and save a character sheet.
-    - I can add character details; Name, race, class, and overall stats
-    - I can store and edit those details
+3rd Iteration: As a D&D player, I can access saved characters and edit them as needed
+    Access saved character
+        -Input: I choose a saved character to access from the console by entering a number from a numbered list of characters
+        -Output: The character’s is displayed in the console in a clear way
+    Edit character info
+        - Input: I tell the program I would like to change some of the information about my character by answering a question
+        - Output: The program asks me what I would like to change
+        - Input: I can tell the program what I would like change based on a list of details that are available to change, then enter new information for that chosen detail
+        - Output: The newly changed character details are saved to my character
 
-As a Dungeon Master I can create and store multiple player characters.
-    -
-
-As a Dungeons and dragons player I can add spells and items.
-    -
 
 //////////////
 
