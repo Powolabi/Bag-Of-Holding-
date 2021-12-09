@@ -59,7 +59,7 @@ public class main {
         System.out.println("y/n");
         check = input.nextLine();
 
-        if(Objects.equals(check, "n")){
+        if(Objects.equals(check, "y")){
             int[] score = new int[6];
             for(int j = 0; j < 6; j++){
                 score[j] = randomRoll.generateAbilityScore();
