@@ -30,28 +30,59 @@ public class main {
     // after character created
     public static void commands(){
         Scanner input = new Scanner(System.in);
-        String[] comm = input.nextLine().split(" ");
-        switch(comm[0]){
-            case "open":    // open  file
-                pullFromFile.getFileData(comm[1]);
+        boolean kill = true;
+        while(kill){
+            String[] comm = input.nextLine().split(" ");
+            switch(comm[0]){
+                case "open":    // open  file
+                    pullFromFile.getFileData(comm[1]);
+                    break;
+                case "stats":{
+                    pullFromFile.getFileData(comm[1]);
+                    System.out.println(characterDetails.getStrength());
+                    System.out.println(characterDetails.getDexterity());
+                    System.out.println(characterDetails.getConstitution());
+                    System.out.println(characterDetails.getIntelligence());
+                    System.out.println(characterDetails.getCharisma());
+                    System.out.println(characterDetails.getWisdom());
+                    System.out.println(characterDetails.getArmorClass());
+                    System.out.println();
+                }
                 break;
-            case "stats":{
-                pullFromFile.getFileData(comm[1]);
-                System.out.println(characterDetails.getStrength());
-                System.out.println(characterDetails.getDexterity());
-                System.out.println(characterDetails.getConstitution());
-                System.out.println(characterDetails.getIntelligence());
-                System.out.println(characterDetails.getCharisma());
-                System.out.println(characterDetails.getWisdom());
-                System.out.println(characterDetails.getArmorClass());
-                System.out.println();
-            }
-            break;
-            case "items":{
+                case "roll":{
+                    switch (comm[1]) {
+                        case "d4" -> randomRoll.rollOfFour();
+                        case "d6" -> randomRoll.rollOfSix();
+                        case "d8" -> randomRoll.rollOfEight();
+                        case "d10" -> randomRoll.rollOfTen();
+                        case "d12" -> randomRoll.rollOfTwelve();
+                        case "d20" -> randomRoll.rollOfTwenty();
+                    }
+                }
+                case "modifiers":{
+                    abilityScoreModifier.setCharMod();
+                    abilityScoreModifier.setConMod();
+                    abilityScoreModifier.setDexMod();
+                    abilityScoreModifier.setIntMod();
+                    abilityScoreModifier.setWisMod();
+                    abilityScoreModifier.setStrMod();
 
+                    System.out.println("STR MOD: " + abilityScoreModifier.getStrMod());
+                    System.out.println("DEX MOD: " + abilityScoreModifier.getDexMod());
+                    System.out.println("CON MOD: " + abilityScoreModifier.getConMod());
+                    System.out.println("INT MOD: " + abilityScoreModifier.getIntMod());
+                    System.out.println("CHAR MOD: " + abilityScoreModifier.getCharMod());
+                    System.out.println("WIS MOD: " + abilityScoreModifier.getWisMod());
+                }break;
+                case "items":{
+
+                }break;
+                case "quit":
+                    kill = false;
+                    System.out.println("...Have a nice Adventure!");
+                default:
+                    break;
             }
-            default:
-                break;
         }
     }
 
