@@ -58,6 +58,8 @@ public class characterDetails {
         return level;
     }
 
+    public String getArmor() {return armorClass;}
+
     public String getHitPoints() {
         return hitPoints;
     }

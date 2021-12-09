@@ -12,5 +12,6 @@ public class mainTest {
         String route = "character";
         System.setIn(new ByteArrayInputStream(route.getBytes()));
         String name = "name";
+
     }
 }

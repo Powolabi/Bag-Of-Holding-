@@ -2,11 +2,13 @@ package edu.bsu.cs222;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
+
 
 public class pullFromFileTest {
     @Test
-    public void readFileTest(){
+    public void readFileTest() throws FileNotFoundException {
 
-        pullFromFile.readFile("users.txt");
+        pullFromFile.readFile("morpheus.txt");
     }
 }

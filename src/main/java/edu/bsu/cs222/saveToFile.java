@@ -19,13 +19,12 @@ public class saveToFile {
 
     public static void writeNewPlayerCharacter(characterDetails details) {
         try {
-            FileWriter myObj = new FileWriter( "src\\main\\resources\\characters\\" + details.getName() + ".txt", true);
+            FileWriter writer = new FileWriter( "src\\main\\resources\\characters\\" + details.getName() + ".txt");
 
-            myObj.write(details.getName() + "." + details.getRace() + "." + details.getCharacterClass() + "." + details.getAlignment() + "." + details.getLevel() + "." + details.getHitPoints() + "." + characterDetails.getArmorClass() + ".");
-            myObj.write( characterDetails.getStrength() + "." + characterDetails.getDexterity() + "." + characterDetails.getConstitution() + "." + characterDetails.getIntelligence() + "." + characterDetails.getCharisma() + "." + details.getWisdom());
+            writer.write(details.getName() + "," + details.getRace() + "," + details.getCharacterClass() + "," + details.getAlignment() + "," + details.getLevel() + "," + details.getHitPoints() + "," + characterDetails.getArmorClass() + ",");
+            writer.write( characterDetails.getStrength() + "," + characterDetails.getDexterity() + "," + characterDetails.getConstitution() + "," + characterDetails.getIntelligence() + "," + characterDetails.getCharisma() + "," + details.getWisdom());
             //current set sort - NAME.RACE.CLASS.ALIGNMENT.LEVEL.HITPOINTS.ARMORCLASS.STR.DEX.CON.INT.CHAR.WIS
-            myObj.write("\n");
-            myObj.close();
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,7 @@
 package edu.bsu.cs222;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -12,97 +13,96 @@ public class main {
     private static File[] listOfNames = characterFolder.listFiles();
     private static Scanner sc = new Scanner(System.in);
     private static String fileName;
+    private static characterDetails details;
 
 
-    private static void start(){
+    private static void start() throws FileNotFoundException {
+        boolean start = true;
 
-        System.out.println("Bag of Holding\n");
+        while(start){
+            System.out.println("Bag of Holding\n");
+            System.out.println(newCharacter + " | " +  savedCharacter +  " | " + "quit\n");
+            String input = sc.nextLine();
 
-        System.out.println(newCharacter + " | " +  savedCharacter +  " | " + "quit\n");
-        String input = sc.nextLine();
-
-        if (Objects.equals(input, newCharacter)){
-            createCharacter();
-        } else if (Objects.equals(input, savedCharacter)){
-            int choice = chooseCharacter();
-            fileName = getSavedCharacterName(choice);
-            if(fileName != null){
-                pullFromFile.getFileData(fileName);
-            }else {
+            if (Objects.equals(input, newCharacter)){
+                createCharacter();
+                start = false;
+            } else if (Objects.equals(input, savedCharacter)){
+                int choice = chooseCharacter();
+                fileName = getSavedCharacterName(choice);
+                if(fileName != null){
+                    details = pullFromFile.getFileData(fileName);
+                    displayCharacterDetails();
+                    start = false;
+                }else {
+                    System.out.println("err: input incorrect");
+                }
+            } else if (Objects.equals(input, "quit")) {
+                System.out.println("...Have a nice adventure!");
+                System.exit(0);
+            } else {
                 System.out.println("err: input incorrect");
-                start();
             }
-            commands();
-        } else if (Objects.equals(input, "quit")) {
-            System.exit(0);
-        } else {
-            System.out.println("err: input incorrect");
-            start();
         }
+        commands();
     }
     // after character created
-    private static void commands(){
+    private static void commands() throws FileNotFoundException {
         boolean kill = false;
         String input;
-        while(kill){
+        while(kill == false){
+            System.out.println("\nWhat would you like to do next?");
             input = sc.nextLine();
             switch(input){
                 case "menu":{
                     start();
                 }
                 case "stats":{
-                    pullFromFile.getFileData(fileName);
-                    System.out.println(characterDetails.getStrength());
-                    System.out.println(characterDetails.getDexterity());
-                    System.out.println(characterDetails.getConstitution());
-                    System.out.println(characterDetails.getIntelligence());
-                    System.out.println(characterDetails.getCharisma());
-                    System.out.println(characterDetails.getWisdom());
-                    System.out.println(characterDetails.getArmorClass());
-                    System.out.println();
+                    System.out.println("Strength: " + details.getStrength());
+                    System.out.println("Dexterity: " + details.getDexterity());
+                    System.out.println("Constitution: " + details.getConstitution());
+                    System.out.println("Intelligence: " + details.getIntelligence());
+                    System.out.println("Charisma: " + details.getCharisma());
+                    System.out.println("Wisdom: " + details.getWisdom());
                 }
                 break;
                 case "roll":{
                     System.out.println("Roll Options:\nd4\nd6\nd8\nd10\nd12\nd20\n");
                     System.out.println("Choose Your Die:");
+                    input = sc.nextLine();
                     switch (input) {
-                        case "d4" -> randomRoll.rollOfFour();
-                        case "d6" -> randomRoll.rollOfSix();
-                        case "d8" -> randomRoll.rollOfEight();
-                        case "d10" -> randomRoll.rollOfTen();
-                        case "d12" -> randomRoll.rollOfTwelve();
-                        case "d20" -> randomRoll.rollOfTwenty();
+                        case "d4" -> System.out.println(randomRoll.rollOfFour());
+                        case "d6" -> System.out.println(randomRoll.rollOfSix());
+                        case "d8" -> System.out.println(randomRoll.rollOfEight());
+                        case "d10" -> System.out.println(randomRoll.rollOfTen());
+                        case "d12" -> System.out.println(randomRoll.rollOfTwelve());
+                        case "d20" -> System.out.println(randomRoll.rollOfTwenty());
+                        default -> System.out.println("err: Invalid Input");
                     }
                     break;
                 }
-                case "modifiers":{
-                    abilityScoreModifier.setCharMod();
-                    abilityScoreModifier.setConMod();
-                    abilityScoreModifier.setDexMod();
-                    abilityScoreModifier.setIntMod();
-                    abilityScoreModifier.setWisMod();
-                    abilityScoreModifier.setStrMod();
-
-                    System.out.println("STR MOD: " + abilityScoreModifier.getStrMod());
-                    System.out.println("DEX MOD: " + abilityScoreModifier.getDexMod());
-                    System.out.println("CON MOD: " + abilityScoreModifier.getConMod());
-                    System.out.println("INT MOD: " + abilityScoreModifier.getIntMod());
-                    System.out.println("CHAR MOD: " + abilityScoreModifier.getCharMod());
-                    System.out.println("WIS MOD: " + abilityScoreModifier.getWisMod());
-                }
-                break;
                 case "quit":
                     kill = true;
                     System.out.println("...Have a nice Adventure!");
+                    System.exit(0);
                 default:
+                    System.out.println("err: Invalid Input");
                     break;
             }
         }
     }
 
-    private void displayRollOptions(){}
+    private static void displayCharacterDetails(){
+        System.out.println("Name: " + details.getName());
+        System.out.println("Race: " + details.getRace());
+        System.out.println("Class: " + details.getCharacterClass());
+        System.out.println("Level: " + details.getLevel());
+        System.out.println("Alignment: " + details.getAlignment());
+        System.out.println("Hit Points: " + details.getHitPoints());
+        System.out.println("Armor Class: " + details.getArmor());
+    }
 
-    private static void createCharacter(){
+    private static void createCharacter() throws FileNotFoundException {
         String name, race, align, level, charClass, armorClass, hitPoints, check;
         String str, dex, con, intel, charis, wis;
 
@@ -181,7 +181,6 @@ public class main {
         }
         characterDetails details = new characterDetails(name, race, charClass, align, level, armorClass, hitPoints, str, dex, con, intel, charis, wis);
         saveToFile.writeNewPlayerCharacter(details);
-        start();
     }
 
     private static void displayCharacters(){
@@ -195,7 +194,7 @@ public class main {
         if(choice < 1 || choice > listOfNames.length + 1) {
             return null;
         } else {
-            return listOfNames[choice - 1].toString();
+            return listOfNames[choice - 1].getName().toString();
         }
     }
 
@@ -242,7 +241,7 @@ public class main {
             default -> 0;
         };
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         start();
     }
 }
