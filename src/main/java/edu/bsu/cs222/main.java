@@ -37,9 +37,21 @@ public class main {
                 break;
             case "stats":{
                 pullFromFile.getFileData(comm[1]);
+                System.out.println(characterDetails.getStrength());
+                System.out.println(characterDetails.getDexterity());
+                System.out.println(characterDetails.getConstitution());
+                System.out.println(characterDetails.getIntelligence());
+                System.out.println(characterDetails.getCharisma());
+                System.out.println(characterDetails.getWisdom());
+                System.out.println(characterDetails.getArmorClass());
+                System.out.println();
             }
-            case "items":
+            break;
+            case "items":{
 
+            }
+            default:
+                break;
         }
     }
 
