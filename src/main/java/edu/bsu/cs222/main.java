@@ -35,7 +35,7 @@ public class main {
             String[] comm = input.nextLine().split(" ");
             switch(comm[0]){
                 case "open":    // open  file
-                    pullFromFile.getFileData(comm[1]);
+                    pullFromFile.getFileData(comm[1] + ".txt");
                     break;
                 case "stats":{
                     pullFromFile.getFileData(comm[1]);
@@ -76,7 +76,9 @@ public class main {
                 }break;
                 case "skills": {
                     if(comm[1] == "set-proficiencies"){
+                        switch (comm[2]){
 
+                        }
                     } else if (comm[1] == "get-proficiencies"){
 
                     } else {
