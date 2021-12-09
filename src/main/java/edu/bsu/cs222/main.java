@@ -1,5 +1,6 @@
 package edu.bsu.cs222;
 
+import java.io.Console;
 import java.io.File;
 import java.util.Objects;
 import java.util.Scanner;
@@ -117,8 +118,12 @@ public class main {
         File[] listOfNames = character.listFiles();
 
         for(int i = 0; i < listOfNames.length; i++){
-            System.out.println(listOfNames[i]);
+            System.out.println(listOfNames[i].getName());
         }
+            Console input = System.console();
+            if(input.readLine() == listOfNames[0].getName()){
+
+            }
     }
 
     public static int stringToNumb(String str){
