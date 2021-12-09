@@ -1,5 +1,6 @@
 package edu.bsu.cs222;
 
+import java.io.File;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -111,6 +112,12 @@ public class main {
     public static void savedFiles(){
         System.out.println("Characters: ");
 
+        File character = new File("src\\main\\resources\\characters\\");
+        File[] listOfNames = character.listFiles();
+
+        for(int i = 0; i < listOfNames.length; i++){
+            System.out.println(listOfNames[i]);
+        }
     }
 
     public static int stringToNumb(String str){
