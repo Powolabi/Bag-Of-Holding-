@@ -22,7 +22,7 @@ public class pullFromFile {
 
     public static characterDetails getFileData(String fileName) throws FileNotFoundException {
         //current set sort - NAME.RACE.CLASS.ALIGNMENT.LEVEL.HITPOINTS.ARMORCLASS.STR.DEX.CON.INT.CHAR.WIS
-        File character = new File("src\\main\\resources\\characters\\" + fileName);
+        File character = new File("src\\main\\resources\\" + fileName);
         InputStream file = new FileInputStream(character);
         Scanner sc = new Scanner(file);
         sc.useDelimiter(",");
