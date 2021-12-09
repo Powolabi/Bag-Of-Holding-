@@ -5,111 +5,107 @@ import java.util.Scanner;
 
 public class main {
 
-    static String character = "character";
-    static String campaign = "campaign";
+    static String newCharacter = "new";
+    static String savedCharacter = "saved";
 
     public static void start(){
         Scanner sc = new Scanner(System.in);
         int playerCount;
         System.out.println("Bag of Holding\n");
 
-        System.out.println(character + " or " + campaign + "\n");
+        System.out.println(newCharacter + " | " +  savedCharacter + "\n");
         String input = sc.nextLine();
 
-        if (Objects.equals(input, campaign)){
-            input = sc.nextLine();
-            playerCount = numberOfPlayers(input);
-            createCharacter(playerCount);
-        } else if (Objects.equals(input, character)){
-            createCharacter(1);
+        if (Objects.equals(input, newCharacter)){
+            createCharacter();
+        } else if (Objects.equals(input, savedCharacter)){
+
         } else {
             System.out.println("err: input incorrect");
             start();
         }
     }
 
-    public static void createCharacter(int numPlayers){
+    public static void createCharacter(){
         Scanner input = new Scanner(System.in);
         String name, race, align, level, charClass, armorClass, hitPoints, check;
         String str, dex, con, intel, charis, wis;
 
-        for(int i = 0; i < numPlayers; i++){
-            System.out.println("Character Creation\n");
+        System.out.println("Character Creation\n");
 
-            System.out.println("Enter your character's name:");
-            name = input.nextLine();
+        System.out.println("Enter your character's name:");
+        name = input.nextLine();
 
-            System.out.println("Enter your character's level:");
-            level = input.nextLine();
+        System.out.println("Enter your character's level:");
+        level = input.nextLine();
 
-            System.out.println("Enter your character's class:");
-            charClass = input.nextLine();
+        System.out.println("Enter your character's class:");
+        charClass = input.nextLine();
 
-            System.out.println("Enter your character's race:");
-            race = input.nextLine();
+        System.out.println("Enter your character's race:");
+        race = input.nextLine();
 
-            System.out.println("Enter your character's alignment:");
-            align = input.nextLine();
+        System.out.println("Enter your character's alignment:");
+        align = input.nextLine();
 
-            System.out.println("Enter your character's armor:");
-            armorClass = input.nextLine();
+        System.out.println("Enter your character's armor:");
+        armorClass = input.nextLine();
 
-            System.out.println("Enter your character's hit points:");
-            hitPoints = input.nextLine();
+        System.out.println("Enter your character's hit points:");
+        hitPoints = input.nextLine();
 
-            System.out.println("Want us to roll your stats for you? you just organize them");
-            System.out.println("y/n");
-            check = input.nextLine();
+        System.out.println("Want us to roll your stats for you? you just organize them");
+        System.out.println("y/n");
+        check = input.nextLine();
 
-            if(Objects.equals(check, "y")){
-                int[] score = new int[6];
-                for(int j = 0; i < 6; i++){
-                    score[j] = randomRoll.generateAbilityScore();
-                    System.out.println("" + score[j]);
-                }
-
-                System.out.println("Input the stats in the order you'd like");
-
-                System.out.println("input your Roll for Strength");
-                str = input.nextLine();
-
-                System.out.println("input your Roll for Dexterity");
-                dex = input.nextLine();
-
-                System.out.println("input your Roll for Constitution");
-                con = input.nextLine();
-
-                System.out.println("input your Roll for Intelligence");
-                intel = input.nextLine();
-
-                System.out.println("input your Roll for Charisma");
-                charis = input.nextLine();
-
-                System.out.println("input your Roll for Wisdom");
-                wis = input.nextLine();
-
-            } else {
-                System.out.println("input your Roll for Strength");
-                str = input.nextLine();
-
-                System.out.println("input your Roll for Dexterity");
-                dex = input.nextLine();
-
-                System.out.println("input your Roll for Constitution");
-                con = input.nextLine();
-
-                System.out.println("input your Roll for Intelligence");
-                intel = input.nextLine();
-
-                System.out.println("input your Roll for Charisma");
-                charis = input.nextLine();
-
-                System.out.println("input your Roll for Wisdom");
-                wis = input.nextLine();
+        if(Objects.equals(check, "n")){
+            int[] score = new int[6];
+            for(int j = 0; i < 6; i++){
+                score[j] = randomRoll.generateAbilityScore();
+                System.out.println("" + score[j]);
             }
-            characterDetails details = new characterDetails(name, race, charClass, align, level, armorClass, hitPoints, str, dex, con, intel, charis, wis);
-            saveToFile.writeNewPlayerCharacter(details);
+
+            System.out.println("Input the stats in the order you'd like");
+
+            System.out.println("input your Roll for Strength");
+            str = input.nextLine();
+
+            System.out.println("input your Roll for Dexterity");
+            dex = input.nextLine();
+
+            System.out.println("input your Roll for Constitution");
+            con = input.nextLine();
+
+            System.out.println("input your Roll for Intelligence");
+            intel = input.nextLine();
+
+            System.out.println("input your Roll for Charisma");
+            charis = input.nextLine();
+
+            System.out.println("input your Roll for Wisdom");
+            wis = input.nextLine();
+
+        } else {
+            System.out.println("input your Roll for Strength");
+            str = input.nextLine();
+
+            System.out.println("input your Roll for Dexterity");
+            dex = input.nextLine();
+
+            System.out.println("input your Roll for Constitution");
+            con = input.nextLine();
+
+            System.out.println("input your Roll for Intelligence");
+            intel = input.nextLine();
+
+            System.out.println("input your Roll for Charisma");
+            charis = input.nextLine();
+
+            System.out.println("input your Roll for Wisdom");
+            wis = input.nextLine();
         }
+        characterDetails details = new characterDetails(name, race, charClass, align, level, armorClass, hitPoints, str, dex, con, intel, charis, wis);
+        saveToFile.writeNewPlayerCharacter(details);
     }
 
     private static int numberOfPlayers(String x){
