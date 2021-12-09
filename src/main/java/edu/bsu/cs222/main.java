@@ -17,7 +17,7 @@ public class main {
         String input = sc.nextLine();
 
         if (Objects.equals(input, campaign)){
-            input = System.console().readLine();
+            input = sc.nextLine();
             playerCount = numberOfPlayers(input);
             createCharacter(playerCount);
         } else if (Objects.equals(input, character)){
@@ -51,10 +51,10 @@ public class main {
             System.out.println("Enter your character's alignment:");
             align = input.nextLine();
 
-            System.out.println("Enter your character's alignment:");
+            System.out.println("Enter your character's armor:");
             armorClass = input.nextLine();
 
-            System.out.println("Enter your character's alignment:");
+            System.out.println("Enter your character's hit points:");
             hitPoints = input.nextLine();
 
             System.out.println("Don't have dice? Want us to roll your stats for you? you just organize them");
@@ -65,8 +65,8 @@ public class main {
                 int[] score = new int[6];
                 for(int j = 0; i < 6; i++){
                     score[j] = randomRoll.generateAbilityScore();
+                    System.out.println("" + score[j]);
                 }
-                System.out.println("" + score);
 
                 System.out.println("Input the stats in the order you'd like");
 
