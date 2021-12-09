@@ -2,6 +2,16 @@ Bag of Holding
 
 //////////////
 
+Created by Brendan, Micah and Peter, For our final project we are building "Bag of Holding"
+a tool for creating, saving and editing your character sheets.
+
+For version 0.1.0, we were a bit behind and had the classes and nodes defined. as well as the ability to roll dice
+
+For version 0.2.0
+
+for version 0.3.0
+//////////////
+
 User stories
 ------------
 As a Dungeons and dragons player I can create and save a character sheet.
