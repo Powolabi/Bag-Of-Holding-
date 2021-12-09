@@ -1,7 +1,7 @@
 package edu.bsu.cs222;
 
 public class skills {
-    public static int proficiency = 5;
+    public static int proficiency = 2;
 
     // strength based
     public static int athletics;
@@ -66,4 +66,80 @@ public class skills {
     public static int getStealth() { return stealth; }
 
     public static int getSurvival() { return survival; }
+
+    public static void setAcrobatics(int acrobatics) {
+        skills.acrobatics = acrobatics;
+    }
+
+    public static void setAnimalHandling(int animalHandling) {
+        skills.animalHandling = animalHandling;
+    }
+
+    public static void setArcana(int arcana) {
+        skills.arcana = arcana;
+    }
+
+    public static void setAthletics(int athletics) {
+        skills.athletics = athletics;
+    }
+
+    public static void setDeception(int deception) {
+        skills.deception = deception;
+    }
+
+    public static void setHistory(int history) {
+        skills.history = history;
+    }
+
+    public static void setInsight(int insight) {
+        skills.insight = insight;
+    }
+
+    public static void setIntimidation(int intimidation) {
+        skills.intimidation = intimidation;
+    }
+
+    public static void setInvestigation(int investigation) {
+        skills.investigation = investigation;
+    }
+
+    public static void setMedicine(int medicine) {
+        skills.medicine = medicine;
+    }
+
+    public static void setNature(int nature) {
+        skills.nature = nature;
+    }
+
+    public static void setPerception(int perception) {
+        skills.perception = perception;
+    }
+
+    public static void setPersuasion(int persuasion) {
+        skills.persuasion = persuasion;
+    }
+
+    public static void setPerformance(int performance) {
+        skills.performance = performance;
+    }
+
+    public static void setProficiency(int proficiency) {
+        skills.proficiency = proficiency;
+    }
+
+    public static void setReligion(int religion) {
+        skills.religion = religion;
+    }
+
+    public static void setSleightOfHand(int sleightOfHand) {
+        skills.sleightOfHand = sleightOfHand;
+    }
+
+    public static void setStealth(int stealth) {
+        skills.stealth = stealth;
+    }
+
+    public static void setSurvival(int survival) {
+        skills.survival = survival;
+    }
 }

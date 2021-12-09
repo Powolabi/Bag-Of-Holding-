@@ -74,6 +74,16 @@ public class main {
                     System.out.println("CHAR MOD: " + abilityScoreModifier.getCharMod());
                     System.out.println("WIS MOD: " + abilityScoreModifier.getWisMod());
                 }break;
+                case "skills": {
+                    if(comm[1] == "set-proficiencies"){
+
+                    } else if (comm[1] == ""){
+
+                    }
+                }
+                case "spells": {
+
+                }break;
                 case "items":{
 
                 }break;
