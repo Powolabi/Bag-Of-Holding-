@@ -1,18 +1,9 @@
 package edu.bsu.cs222;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Queue;
-import java.util.Scanner;
 
 public class saveToFile {
-
-    public String parseFileFor(){
-
-        return "";
-    }
 
     public void writeSessionName(String name){
         try{
@@ -30,8 +21,8 @@ public class saveToFile {
         try {
             FileWriter myObj = new FileWriter( "src\\main\\resources\\characters\\" + details.getName() + ".txt", true);
 
-            myObj.write(details.getName() + "." + details.getRace() + "." + details.getCharacterClass() + "." + details.getAlignment() + "." + details.getLevel() + "." + details.getHitPoints() + "." + details.getArmorClass() + ".");
-            myObj.write( details.getStrength() + "." + details.getDexterity() + "." + details.getConstitution() + "." + details.getIntelligence() + "." + details.getCharisma() + "." + details.getWisdom());
+            myObj.write(details.getName() + "." + details.getRace() + "." + details.getCharacterClass() + "." + details.getAlignment() + "." + details.getLevel() + "." + details.getHitPoints() + "." + characterDetails.getArmorClass() + ".");
+            myObj.write( characterDetails.getStrength() + "." + characterDetails.getDexterity() + "." + characterDetails.getConstitution() + "." + characterDetails.getIntelligence() + "." + characterDetails.getCharisma() + "." + details.getWisdom());
             //current set sort - NAME.RACE.CLASS.ALIGNMENT.LEVEL.HITPOINTS.ARMORCLASS.STR.DEX.CON.INT.CHAR.WIS
             myObj.write("\n");
             myObj.close();
