@@ -37,9 +37,6 @@ public class main {
         System.out.println("Enter your character's name:");
         name = input.nextLine();
 
-        System.out.println("Enter your character's level:");
-        level = input.nextLine();
-
         System.out.println("Enter your character's class:");
         charClass = input.nextLine();
 
@@ -48,6 +45,9 @@ public class main {
 
         System.out.println("Enter your character's alignment:");
         align = input.nextLine();
+
+        System.out.println("Enter your character's level:");
+        level = input.nextLine();
 
         System.out.println("Enter your character's armor:");
         armorClass = input.nextLine();
