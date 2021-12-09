@@ -1,6 +1,5 @@
 package edu.bsu.cs222;
 
-import java.io.Console;
 import java.io.File;
 import java.util.Objects;
 import java.util.Scanner;
@@ -9,36 +8,50 @@ public class main {
 
     static String newCharacter = "new";
     static String savedCharacter = "saved";
+    private static File characterFolder = new File("src\\main\\resources\\characters\\");
+    private static File[] listOfNames = characterFolder.listFiles();
+    private static Scanner sc = new Scanner(System.in);
+    private static String fileName;
 
-    public static void start(){
-        Scanner sc = new Scanner(System.in);
-        int playerCount;
+
+    private static void start(){
+
         System.out.println("Bag of Holding\n");
 
-        System.out.println(newCharacter + " | " +  savedCharacter + "\n");
+        System.out.println(newCharacter + " | " +  savedCharacter +  " | " + "quit\n");
         String input = sc.nextLine();
 
         if (Objects.equals(input, newCharacter)){
             createCharacter();
         } else if (Objects.equals(input, savedCharacter)){
-            savedFiles();
+            int choice = chooseCharacter();
+            fileName = getSavedCharacterName(choice);
+            if(fileName != null){
+                pullFromFile.getFileData(fileName);
+            }else {
+                System.out.println("err: input incorrect");
+                start();
+            }
+            commands();
+        } else if (Objects.equals(input, "quit")) {
+            System.exit(0);
         } else {
             System.out.println("err: input incorrect");
             start();
         }
     }
     // after character created
-    public static void commands(){
-        Scanner input = new Scanner(System.in);
-        boolean kill = true;
+    private static void commands(){
+        boolean kill = false;
+        String input;
         while(kill){
-            String[] comm = input.nextLine().split(" ");
-            switch(comm[0]){
-                case "open":    // open  file
-                    pullFromFile.getFileData(comm[1] + ".txt");
-                    break;
+            input = sc.nextLine();
+            switch(input){
+                case "menu":{
+                    start();
+                }
                 case "stats":{
-                    pullFromFile.getFileData(comm[1]);
+                    pullFromFile.getFileData(fileName);
                     System.out.println(characterDetails.getStrength());
                     System.out.println(characterDetails.getDexterity());
                     System.out.println(characterDetails.getConstitution());
@@ -50,7 +63,9 @@ public class main {
                 }
                 break;
                 case "roll":{
-                    switch (comm[1]) {
+                    System.out.println("Roll Options:\nd4\nd6\nd8\nd10\nd12\nd20\n");
+                    System.out.println("Choose Your Die:");
+                    switch (input) {
                         case "d4" -> randomRoll.rollOfFour();
                         case "d6" -> randomRoll.rollOfSix();
                         case "d8" -> randomRoll.rollOfEight();
@@ -58,6 +73,7 @@ public class main {
                         case "d12" -> randomRoll.rollOfTwelve();
                         case "d20" -> randomRoll.rollOfTwenty();
                     }
+                    break;
                 }
                 case "modifiers":{
                     abilityScoreModifier.setCharMod();
@@ -73,26 +89,10 @@ public class main {
                     System.out.println("INT MOD: " + abilityScoreModifier.getIntMod());
                     System.out.println("CHAR MOD: " + abilityScoreModifier.getCharMod());
                     System.out.println("WIS MOD: " + abilityScoreModifier.getWisMod());
-                }break;
-                case "skills": {
-                    if(comm[1] == "set-proficiencies"){
-                        switch (comm[2]){
-
-                        }
-                    } else if (comm[1] == "get-proficiencies"){
-
-                    } else {
-
-                    }
                 }
-                case "spells": {
-
-                }break;
-                case "items":{
-
-                }break;
+                break;
                 case "quit":
-                    kill = false;
+                    kill = true;
                     System.out.println("...Have a nice Adventure!");
                 default:
                     break;
@@ -100,37 +100,38 @@ public class main {
         }
     }
 
-    public static void createCharacter(){
-        Scanner input = new Scanner(System.in);
+    private void displayRollOptions(){}
+
+    private static void createCharacter(){
         String name, race, align, level, charClass, armorClass, hitPoints, check;
         String str, dex, con, intel, charis, wis;
 
         System.out.println("Character Creation\n");
 
         System.out.println("Enter your character's name:");
-        name = input.nextLine();
+        name = sc.nextLine();
 
         System.out.println("Enter your character's class:");
-        charClass = input.nextLine();
+        charClass = sc.nextLine();
 
         System.out.println("Enter your character's race:");
-        race = input.nextLine();
+        race = sc.nextLine();
 
         System.out.println("Enter your character's alignment:");
-        align = input.nextLine();
+        align = sc.nextLine();
 
         System.out.println("Enter your character's level:");
-        level = input.nextLine();
+        level = sc.nextLine();
 
         System.out.println("Enter your character's armor:");
-        armorClass = input.nextLine();
+        armorClass = sc.nextLine();
 
         System.out.println("Enter your character's hit points:");
-        hitPoints = input.nextLine();
+        hitPoints = sc.nextLine();
 
         System.out.println("Want us to roll your stats for you? you just organize them");
         System.out.println("y/n");
-        check = input.nextLine();
+        check = sc.nextLine();
 
         if(Objects.equals(check, "y")){
             int[] score = new int[6];
@@ -142,58 +143,68 @@ public class main {
             System.out.println("Input the stats in the order you'd like");
 
             System.out.println("input your Roll for Strength");
-            str = input.nextLine();
+            str = sc.nextLine();
 
             System.out.println("input your Roll for Dexterity");
-            dex = input.nextLine();
+            dex = sc.nextLine();
 
             System.out.println("input your Roll for Constitution");
-            con = input.nextLine();
+            con = sc.nextLine();
 
             System.out.println("input your Roll for Intelligence");
-            intel = input.nextLine();
+            intel = sc.nextLine();
 
             System.out.println("input your Roll for Charisma");
-            charis = input.nextLine();
+            charis = sc.nextLine();
 
             System.out.println("input your Roll for Wisdom");
-            wis = input.nextLine();
+            wis = sc.nextLine();
 
         } else {
             System.out.println("input your Roll for Strength");
-            str = input.nextLine();
+            str = sc.nextLine();
 
             System.out.println("input your Roll for Dexterity");
-            dex = input.nextLine();
+            dex = sc.nextLine();
 
             System.out.println("input your Roll for Constitution");
-            con = input.nextLine();
+            con = sc.nextLine();
 
             System.out.println("input your Roll for Intelligence");
-            intel = input.nextLine();
+            intel = sc.nextLine();
 
             System.out.println("input your Roll for Charisma");
-            charis = input.nextLine();
+            charis = sc.nextLine();
 
             System.out.println("input your Roll for Wisdom");
-            wis = input.nextLine();
+            wis = sc.nextLine();
         }
         characterDetails details = new characterDetails(name, race, charClass, align, level, armorClass, hitPoints, str, dex, con, intel, charis, wis);
         saveToFile.writeNewPlayerCharacter(details);
         start();
     }
 
-    public static void savedFiles(){
+    private static void displayCharacters(){
         System.out.println("Characters: ");
-
-        File character = new File("src\\main\\resources\\characters\\");
-        File[] listOfNames = character.listFiles();
-
         for(int i = 0; i < listOfNames.length; i++){
-            System.out.println(listOfNames[i].getName());
+            System.out.println((i+1) + ". " + listOfNames[i].getName());
         }
-        commands();
     }
+
+    private static String getSavedCharacterName(int choice){
+        if(choice < 1 || choice > listOfNames.length + 1) {
+            return null;
+        } else {
+            return listOfNames[choice - 1].toString();
+        }
+    }
+
+    private static int chooseCharacter(){
+        displayCharacters();
+        System.out.println("Enter the number of the character you would like to access:");
+        int choice = Integer.parseInt(sc.nextLine());
+        return choice;
+        }
 
     public static int stringToNumb(String str){
 
