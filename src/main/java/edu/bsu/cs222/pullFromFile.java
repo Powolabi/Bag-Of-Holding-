@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class pullFromFile {
 
     public static void readFile(String fileName) throws FileNotFoundException {
-        File character = new File("src\\main\\resources\\characters\\" + fileName);
+        File character = new File("src\\main\\resources\\" + fileName);
         InputStream file = new FileInputStream(character);
         Scanner sc = new Scanner(file);
         sc.useDelimiter(",");

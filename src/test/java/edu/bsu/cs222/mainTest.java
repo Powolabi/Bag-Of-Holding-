@@ -9,9 +9,8 @@ import java.io.ByteArrayInputStream;
 public class mainTest {
     @Test
     public void testStart(){
-        String route = "character";
-        System.setIn(new ByteArrayInputStream(route.getBytes()));
-        String name = "name";
-
+        main m = new main();
+        int i = main.stringToNumb("28");
+        Assertions.assertEquals(28, i);
     }
 }

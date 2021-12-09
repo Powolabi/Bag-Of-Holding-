@@ -9,6 +9,6 @@ public class pullFromFileTest {
     @Test
     public void readFileTest() throws FileNotFoundException {
 
-        pullFromFile.readFile("morpheus.txt");
+        pullFromFile.readFile("spells.csv");
     }
 }

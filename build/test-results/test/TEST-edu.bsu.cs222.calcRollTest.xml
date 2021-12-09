@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.bsu.cs222.calcRollTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-12-09T15:08:04" hostname="DESKTOP-JOQDIIT" time="0.035">
+  <properties/>
+  <testcase name="rollOfTwentyTest()" classname="edu.bsu.cs222.calcRollTest" time="0.011"/>
+  <testcase name="rollOfTenTest()" classname="edu.bsu.cs222.calcRollTest" time="0.002"/>
+  <testcase name="rollOfFourTest()" classname="edu.bsu.cs222.calcRollTest" time="0.005"/>
+  <testcase name="rollOfEightTest()" classname="edu.bsu.cs222.calcRollTest" time="0.003"/>
+  <testcase name="rollOfTwelveTest()" classname="edu.bsu.cs222.calcRollTest" time="0.002"/>
+  <testcase name="rollOfSixTest()" classname="edu.bsu.cs222.calcRollTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
