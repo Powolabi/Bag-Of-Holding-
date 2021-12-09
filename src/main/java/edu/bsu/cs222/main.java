@@ -120,10 +120,6 @@ public class main {
         for(int i = 0; i < listOfNames.length; i++){
             System.out.println(listOfNames[i].getName());
         }
-            Console input = System.console();
-            if(input.readLine() == listOfNames[0].getName()){
-
-            }
     }
 
     public static int stringToNumb(String str){
