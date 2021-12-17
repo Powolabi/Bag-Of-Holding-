@@ -5,21 +5,10 @@ import java.io.IOException;
 
 public class saveToFile {
 
-    public void writeSessionName(String name){
-        try{
-            FileWriter myObj = new FileWriter("src\\main\\resources\\SessionName.txt", true);
-
-            myObj.write(name);
-            myObj.write("\n");
-
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }
 
     public static void writeNewPlayerCharacter(characterDetails details) {
         try {
-            FileWriter writer = new FileWriter( "src\\main\\resources\\characters\\" + details.getName() + ".txt");
+            FileWriter writer = new FileWriter( "src\\main\\resources\\" + details.getName() + ".txt");
 
             writer.write(details.getName() + "," + details.getRace() + "," + details.getCharacterClass() + "," + details.getAlignment() + "," + details.getLevel() + "," + details.getHitPoints() + "," + characterDetails.getArmorClass() + ",");
             writer.write( characterDetails.getStrength() + "," + characterDetails.getDexterity() + "," + characterDetails.getConstitution() + "," + characterDetails.getIntelligence() + "," + characterDetails.getCharisma() + "," + details.getWisdom());
