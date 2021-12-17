@@ -19,7 +19,7 @@ public class saveToFile {
 
     public static void writeNewPlayerCharacter(characterDetails details) {
         try {
-            FileWriter writer = new FileWriter( "src\\main\\resources\\" + details.getName() + ".txt");
+            FileWriter writer = new FileWriter( "src\\main\\resources\\characters\\" + details.getName() + ".txt");
 
             writer.write(details.getName() + "," + details.getRace() + "," + details.getCharacterClass() + "," + details.getAlignment() + "," + details.getLevel() + "," + details.getHitPoints() + "," + characterDetails.getArmorClass() + ",");
             writer.write( characterDetails.getStrength() + "," + characterDetails.getDexterity() + "," + characterDetails.getConstitution() + "," + characterDetails.getIntelligence() + "," + characterDetails.getCharisma() + "," + details.getWisdom());

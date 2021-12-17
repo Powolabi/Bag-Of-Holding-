@@ -9,7 +9,7 @@ public class main {
 
     static String newCharacter = "new";
     static String savedCharacter = "saved";
-    private static File characterFolder = new File("src\\main\\resources\\");
+    private static File characterFolder = new File("src\\main\\resources\\characters\\");
     private static File[] listOfNames = characterFolder.listFiles();
     private static Scanner sc = new Scanner(System.in);
     private static String fileName;
