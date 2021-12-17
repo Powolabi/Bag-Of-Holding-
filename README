@@ -24,12 +24,30 @@ User stories
 
 Manual:
 
-Firstly, we had issues with Gradle, and the program gives errors if you try to run from gradle tasks.
-To run our software you simply right click on the main class, and run that instead.
+HOW TO RUN THE PROGRAM:
+We had issues running from gradle.
+The program gives errors if you try to run from gradle tasks.
+To run our software you need to run the menu class.
 
-The best way to use this software is to save a character or multiple. To do that you type new in the
-opening menu. When you've finished, simply type quit. The software will close and your character will be saved!
-You can access the saved characters by running it again, then typing saved in the opening menu.
-From there you can type a few different words to do things like see your character's stats,
-roll a die, or leave the application. Sadly, to edit your character's info you'll have to
-create a new one using the same name to overwrite the old file.
+CREATE NEW CHARACTER:
+Type "new" in the opening menu.
+When you've finished, simply type "quit".
+The software will close and your character will be saved!
+
+ACCESS SAVED CHARACTERS:
+Once you have already saved at least one character
+Type "saved" in the opening menu
+A list of your saved characters will pop up
+From there type the number of the one you want
+
+COMMANDS:
+After you choose a saved character
+The screen will ask
+"What would you like to do next"
+Now you can do a few other things
+
+- "menu" will open the first menu
+- "stats" will display the character's stats
+- "roll" will give you die options for automatic rolls
+- "quit" will close the program
+
