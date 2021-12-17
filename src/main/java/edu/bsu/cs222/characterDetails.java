@@ -7,7 +7,6 @@ public class characterDetails {
     public static String characterClass;
     public static String hitPoints;
     public static String armorClass;
-    public static String speed;
     public static String level;
     public static String Strength;
     public static String Dexterity;
@@ -88,6 +87,10 @@ public class characterDetails {
 
     public void setCharisma(String charisma) {
         Charisma = charisma;
+    }
+
+    public static void setLevel(String level) {
+        characterDetails.level = level;
     }
 
     public static String getStrength() {

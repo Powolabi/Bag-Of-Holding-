@@ -9,10 +9,9 @@ public class main {
 
     static String newCharacter = "new";
     static String savedCharacter = "saved";
-    private static File characterFolder = new File("src\\main\\resources\\");
-    private static File[] listOfNames = characterFolder.listFiles();
-    private static Scanner sc = new Scanner(System.in);
-    private static String fileName;
+    private static final File characterFolder = new File("src\\main\\resources\\");
+    private static final File[] listOfNames = characterFolder.listFiles();
+    private static final Scanner sc = new Scanner(System.in);
     private static characterDetails details;
 
 
@@ -29,7 +28,7 @@ public class main {
                 start = false;
             } else if (Objects.equals(input, savedCharacter)){
                 int choice = chooseCharacter();
-                fileName = getSavedCharacterName(choice);
+                String fileName = getSavedCharacterName(choice);
                 if(fileName != null){
                     details = pullFromFile.getFileData(fileName);
                     displayCharacterDetails();
@@ -50,7 +49,7 @@ public class main {
     private static void commands() throws FileNotFoundException {
         boolean kill = false;
         String input;
-        while(kill == false){
+        while(!kill){
             System.out.println("\nWhat would you like to do next?");
             input = sc.nextLine();
             switch(input){
@@ -58,12 +57,12 @@ public class main {
                     start();
                 }
                 case "stats":{
-                    System.out.println("Strength: " + details.getStrength());
-                    System.out.println("Dexterity: " + details.getDexterity());
-                    System.out.println("Constitution: " + details.getConstitution());
-                    System.out.println("Intelligence: " + details.getIntelligence());
-                    System.out.println("Charisma: " + details.getCharisma());
-                    System.out.println("Wisdom: " + details.getWisdom());
+                    System.out.println("Strength: " + characterDetails.getStrength());
+                    System.out.println("Dexterity: " + characterDetails.getDexterity());
+                    System.out.println("Constitution: " + characterDetails.getConstitution());
+                    System.out.println("Intelligence: " + characterDetails.getIntelligence());
+                    System.out.println("Charisma: " + characterDetails.getCharisma());
+                    System.out.println("Wisdom: " + characterDetails.getWisdom());
                 }
                 break;
                 case "roll":{
@@ -102,7 +101,7 @@ public class main {
         System.out.println("Armor Class: " + details.getArmor());
     }
 
-    private static void createCharacter() throws FileNotFoundException {
+    private static void createCharacter() {
         String name, race, align, level, charClass, armorClass, hitPoints, check;
         String str, dex, con, intel, charis, wis;
 
@@ -185,24 +184,23 @@ public class main {
 
     private static void displayCharacters(){
         System.out.println("Characters: ");
-        for(int i = 0; i < listOfNames.length; i++){
+        for(int i = 0; i < Objects.requireNonNull(listOfNames).length; i++){
             System.out.println((i+1) + ". " + listOfNames[i].getName());
         }
     }
 
     private static String getSavedCharacterName(int choice){
-        if(choice < 1 || choice > listOfNames.length + 1) {
+        if(choice < 1 || choice > Objects.requireNonNull(listOfNames).length + 1) {
             return null;
         } else {
-            return listOfNames[choice - 1].getName().toString();
+            return listOfNames[choice - 1].getName();
         }
     }
 
     private static int chooseCharacter(){
         displayCharacters();
         System.out.println("Enter the number of the character you would like to access:");
-        int choice = Integer.parseInt(sc.nextLine());
-        return choice;
+        return Integer.parseInt(sc.nextLine());
         }
 
     public static int stringToNumb(String str){
