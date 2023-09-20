@@ -1,4 +1,4 @@
-Bag of Holding
+## Bag of Holding
 
 //////////////
 
@@ -12,7 +12,7 @@ For version 0.2.0 we started a GUI, and got the application to save user input t
 for version 0.3.0 we gave up on the GUI, created a console window menu, and added the ability to access saved characters
 //////////////
 
-User stories
+## User stories
 ------------
 3rd Iteration: As a D&D player, I can access saved characters and edit them as needed
     Access saved character
@@ -22,7 +22,7 @@ User stories
 
 //////////////
 
-Manual:
+## Manual:
 
 HOW TO RUN THE PROGRAM:
 We had issues running from gradle.
